@@ -1,19 +1,39 @@
-Koi (こい, 恋) 是由 [tcdw](https://www.tcdw.net) 为他不存在的女儿制作的 [Astro](https://astro.build/) 静态博客模板。
+## 我
 
-## 特性
+* 社畜
+* （虚假的）全栈划水工程师
+* UI 控，~~有时候软件简洁干净胜过功能多~~
+* 过气二次元：《崩坏：星穹铁道》亚服玩家，《蔚蓝档案》国际服玩家，~~《原神》国服官服亚服玩家~~（现已退坑）
+* 对轨道交通（国铁和地铁）有一定的了解
+* ~~世界上情商最低的人，并获得了多种世界纪录<sup>1</sup>认证~~
 
-- 全站响应式，支持各种设备的浏览需求
-- 明亮/暗黑双主题，跟随用户操作系统设置应用
-- SEO 友好
-- 性能好：前端部分仅需少量 JavaScript
-- 可访问性好：样式设计基本符合 WCAG 规范[^1]，键盘/读屏软件友好
-- 好康！！！
+## 本站
 
-[^1]: 需要搭配恰当的横幅图片，才能使得头部的标题和副标题文字对比度符合 WCAG 颜色标准。
+* 建于 2012 年
+* 经过多次迁移和后端程序更换
+* 站长一度试图建设一个技术型博客，但因为站长~~太菜了，~~遇到的问题都是别人早就遇到过的，所以现在只剩下碎碎念了
 
-## 技术栈
+## 本站样式
 
-- [Astro](https://astro.build/) - 通用的内容性网站框架
-- [Tailwind CSS](https://tailwindcss.com/) - 原子化的 CSS 框架
-- [Svelte](https://svelte.dev/) - 为网站增加互动元素的轻量级 UI 库
-- [TypeScript](https://www.typescriptlang.org/) - <abbr title="从佐玩官网看到的一句话描述。我觉得这个很妙，抄过来了（">八块腹肌</abbr>的 JavaScript
+- 头图由 **◂Ⓘ▸YAYOI の 夢** [@Yayoi_no_yume](https://twitter.com/Yayoi_no_yume) 提供
+- 整体设计已经在 GitHub 开源，项目在 [这里](https://github.com/tcdw/koi)。目前只有 Astro 版本，不过欢迎在遵循许可证的前提下移植到其它博客平台。
+
+## 联系方式
+
+* E-mail: tcdw2011 (aite) gmail (dian) com  
+（如果需要 IM 联系方式，请通过电子邮件索取。）
+* [GitHub](https://github.com/tcdw)
+* [Bluesky](https://bsky.app/profile/tcdw.net)
+* [X/Twitter](https://x.com/tcdwww)
+
+## 关于评论
+
+本站大部分文章和页面均开放评论，请文明评论。管理员有权删除被认为不适当的评论。
+
+某些评论可能需要在审核后才会显示。
+
+如果需要删除你的评论，请通过提交评论使用的电子邮箱地址进行申请。
+
+---
+
+<sup>1</sup> 此「世界」指的是 tcdw 的自我世界。

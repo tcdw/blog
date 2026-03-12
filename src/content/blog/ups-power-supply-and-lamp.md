@@ -1,0 +1,63 @@
+---
+title: '宿舍用小型 UPS 电源与新台灯'
+description: '去年 11 月，我购买了一部二手的联想手机，把自己的电信米粉卡塞了进去，用来运行 Telegram SMS 和开热点。这部手机其实一切都好，但是有个问题：电池不耐用。因为我们会定时熄灯，导致手机并不能 24 小时充电，因此：   如果一直开热点，第二天就没电了。  如果按需开热点可以解决，但这部手机开热点的过程很麻烦，需要进入多级菜单。'
+pubDate: '2019-05-19T08:20:38.000Z'
+---
+
+去年 11 月，我购买了一部二手的联想手机，把自己的电信米粉卡塞了进去，用来运行 [Telegram SMS](https://github.com/telegram-sms/telegram-sms) 和开热点。这部手机其实一切都好，但是有个问题：电池**不耐用**。因为我们会定时熄灯，导致手机并不能 24 小时充电，因此：
+
+* 如果一直开热点，第二天就没电了。
+* 如果按需开热点可以解决，但这部手机开热点的过程很麻烦，需要进入多级菜单。
+
+我其实还考虑过使用充电宝，但是：
+
+* 我的品胜充电宝，如果重新插入电源，那么充电过程就会中止，必须手工再启动一次。
+* 我的紫米充电宝，尽管可以即插即用，但是如果在断电的情况下手机充满电，那么就会自动停止充电。
+* 我的 Anker 充电宝，容量太小了（只有 5000 毫安）。
+
+虽然我理解这些充电宝的设计是有道理的，但显然不能满足我的需求。几个月以后，忍无可忍的我决定试试传说中的那种适合宿舍用路由器的 UPS。
+
+几天以后，UPS 到了。
+
+![UPS 的外包装](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0582_resized.jpg)
+![正面](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0583_resized.jpg)
+![背面](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0584_resized.jpg)
+
+我选购的这款 UPS 可同时提供 USB、5V 和 9V / 12V 输出（可以通过开关切换 9V / 12V）；最大输出电流为 2A（所有端口总和）。
+
+同时，它使用 DC 输入，非常节约空间。
+
+![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0585_resized.jpg)
+
+我把它接上了我的手机，让这部 UPS 为我的手机持续供电。效果还是不错的：我同时开着 Telegram SMS、代理软件和热点，也不用担心手机中途断电啦。
+
+---
+
+不久以后，我们团队在一个省级比赛获得了一等奖，每个人都得到了这样的奖品：飞利浦台灯。
+
+![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/IMG_0676_resized.jpg)
+![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0611_resized.jpg)
+
+因为这部台灯使用 12V 输入，功耗很低，我便把它接入了我的 UPS。这样，即使熄灯也可以使用啦。
+
+![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0614_resized.jpg)
+
+⇧ 旧的『宿舍神灯』。
+
+![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0615_resized.jpg)
+
+⇧ 新的飞利浦台灯。从我的实际感觉看，光线还是比那部『宿舍神灯』要舒服的，而且还有四档调光，非常灵活。
+
+总之，很开心获得这么一套装备升级。我可以变得更懒惰了！
+
+## 20190612 更新：一加 3T
+
+我的联想电池鼓包了，连盖子都盖不上了。考虑到这部联想的坑爹之处，我买了一部二手一加 3T 作为 Telegram SMS 服务器使用。
+
+目前来看，它的电池并不是很坑爹，所以只需要用普通的 2A 电源定时充电即可。
+
+于是这 UPS 的供电目标就只剩下那个台灯了。不过不知道未来还会发生什么…… 😅
+
+![phone spec](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_spec.jpg)
+
+![phone status](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_ststus.jpg)
