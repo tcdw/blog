@@ -1,6 +1,6 @@
 // 引入的图片对象，用于 Astro 的 <Image> 组件
 // 详见 https://docs.astro.build/en/guides/images/#image--astroassets
-import authorAvatarImage from "./assets/akkarin.jpg";
+import authorAvatarImage from "./assets/avatar.png";
 import headerImageDay from "./assets/header_day.jpg";
 import headerImageNight from "./assets/header_night.webp";
 
@@ -24,11 +24,11 @@ export const SITE_COPYRIGHT_YEAR_START = "2012";
 
 // 网站头部导航菜单
 export const SITE_MENU: { title: string; href: string; target: string }[] = [
-    { title: "首页", href: "./", target: "" },
-    { title: "博客", href: "./blog/", target: "" },
-    { title: "关于", href: "./page/about/", target: "" },
-    { title: "归档", href: "./page/archive/", target: "" },
-    { title: "链接", href: "./page/links/", target: "" },
+  { title: "首页", href: "./", target: "" },
+  { title: "博客", href: "./blog/", target: "" },
+  { title: "关于", href: "./page/about/", target: "" },
+  { title: "归档", href: "./page/archive/", target: "" },
+  { title: "链接", href: "./page/links/", target: "" },
 ];
 
 // 网站横幅背景图片（明亮主题）
