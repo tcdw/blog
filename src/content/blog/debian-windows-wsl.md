@@ -1,7 +1,7 @@
 ---
-title: '把 WSL 的发行版换成 Debian 时撞的坑'
-description: 'tl;dr：别自以为是  参考教程：Debian on Windows via WSL  1. 下载 Git for Windows 这种庞然大物不是必须的，你直接从 GitHub 上 Download ZIP 就行 2. 安装 Python，一定要记得在第一步勾选 Add Python 3.x to PATH'
-pubDate: '2017-11-05T12:15:41.000Z'
+title: "把 WSL 的发行版换成 Debian 时撞的坑"
+description: "tl;dr：别自以为是  参考教程：Debian on Windows via WSL  1. 下载 Git for Windows 这种庞然大物不是必须的，你直接从 GitHub 上 Download ZIP 就行 2. 安装 Python，一定要记得在第一步勾选 Add Python 3.x to PATH"
+pubDate: "2017-11-05T12:15:41.000Z"
 ---
 
 tl;dr：别自以为是
@@ -16,7 +16,7 @@ tl;dr：别自以为是
 6. 为了修复 locale 问题，你需要
 
 ```bash
-echo "en_US.UTF-8 UTF-8" > /etc/locale.gen  
+echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 apt install locales
 ```
 

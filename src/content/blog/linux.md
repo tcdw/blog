@@ -1,7 +1,7 @@
 ---
-title: '我与 Linux'
-description: '貌似很多人都是一上来就学习使用桌面版 GNU/Linux 发行版（下面简称 Linux），但我的过程嘛……   Android  小时候的我也认为，世界上只有 Windows 这种桌面操作系统。  2012 年，我拥有了摩托罗拉 xt910。我想给我的 xt910 刷 MIUI V4，但我的 xt910 是国行的，使用国行底包直接刷进去会出现发热的问题。'
-pubDate: '2017-12-10T09:10:50.000Z'
+title: "我与 Linux"
+description: "貌似很多人都是一上来就学习使用桌面版 GNU/Linux 发行版（下面简称 Linux），但我的过程嘛……   Android  小时候的我也认为，世界上只有 Windows 这种桌面操作系统。  2012 年，我拥有了摩托罗拉 xt910。我想给我的 xt910 刷 MIUI V4，但我的 xt910 是国行的，使用国行底包直接刷进去会出现发热的问题。"
+pubDate: "2017-12-10T09:10:50.000Z"
 ---
 
 貌似很多人都是一上来就学习使用桌面版 GNU/Linux 发行版（下面简称 Linux），但我的过程嘛……
@@ -40,12 +40,12 @@ dd if=/sdcard/cid-go.bin of=/dev/block/cid
 
 与第一次安装 Ubuntu 相比，我这次有了迁移的信心：
 
-* Chrome
-* Telegram
-* Node.js 与 git，它们对 \*nix 本身就更友好
-* QQ Web 版
-* LibreOffice
-* ……
+- Chrome
+- Telegram
+- Node.js 与 git，它们对 \*nix 本身就更友好
+- QQ Web 版
+- LibreOffice
+- ……
 
 我安装的是 Debian jessie + Gnome；我没有删除硬盘上的 Windows 10，因为我担心可能还有 Windows 限定的情形，但是并没有。这经历也为我后来迁移到 macOS 奠定了基础。
 
@@ -61,6 +61,6 @@ macOS 给我的第一印象就是省心。我不再需要向以前那样折腾�
 
 即使需要我使用命令行干预系统，我也可以用我学会的 Linux 知识轻松搞定，因为 Linux 本来就属于 \*nix 家族啊。
 
-***
+---
 
 这就是我与 Linux 的黑历史了。这篇文章不是说明什么道理，只是跟大家分享一下我的经历。

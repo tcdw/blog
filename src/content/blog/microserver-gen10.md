@@ -1,7 +1,7 @@
 ---
-title: '新的家庭服务器：MicroServer Gen10'
-description: '我的上一代家庭服务器是一台技嘉的 GB-BXBT-2807。其实作为家庭服务器来说，它是个还行的选择，但是内部只能安装一块 2.5 寸 9.5mm 以下的 SATA 硬盘，而且只有一个 USB 3.0 和两个 USB 2.0 接口。'
-pubDate: '2020-01-10T11:02:42.000Z'
+title: "新的家庭服务器：MicroServer Gen10"
+description: "我的上一代家庭服务器是一台技嘉的 GB-BXBT-2807。其实作为家庭服务器来说，它是个还行的选择，但是内部只能安装一块 2.5 寸 9.5mm 以下的 SATA 硬盘，而且只有一个 USB 3.0 和两个 USB 2.0 接口。"
+pubDate: "2020-01-10T11:02:42.000Z"
 ---
 
 我的上一代家庭服务器是一台技嘉的 [GB-BXBT-2807](https://www.gigabyte.com/Mini-PcBarebone/GB-BXBT-2807-rev-10)。其实作为家庭服务器来说，它是个还行的选择，但是内部只能安装**一块** 2.5 寸 9.5mm 以下的 SATA 硬盘，而且只有一个 USB 3.0 和两个 USB 2.0 接口。
@@ -12,21 +12,21 @@ pubDate: '2020-01-10T11:02:42.000Z'
 
 看来，我需要一台真正的多盘位 NAS 服务器了。我一度考虑过以下方案：
 
-* 搞个蜗牛星际。但是在 KK 家摸到真机以后，我对它的做工倍感失望。
-* 买个[迎广 MS04](https://www.ipc.in-win.com/soho-smb-iw-ms04)，自己从头攒一台 NAS 出来。但是这样的话，总支出大概不会跟买一台 Gen10 差太远，而且保修这个问题会变得比较复杂。
+- 搞个蜗牛星际。但是在 KK 家摸到真机以后，我对它的做工倍感失望。
+- 买个[迎广 MS04](https://www.ipc.in-win.com/soho-smb-iw-ms04)，自己从头攒一台 NAS 出来。但是这样的话，总支出大概不会跟买一台 Gen10 差太远，而且保修这个问题会变得比较复杂。
 
 最终，我还是决定购买 HPE ProLiant MicroServer Gen10。
 
 可以说，这款主机对我来说，几乎是完美的：
 
-* 4 盘位（虽然并不是热插拔）
-* 低功耗（x3216 的 TDP 只有 15w）
-* 主机本身是正常的 x86 PC，可以很方便的安装各种主流 Linux 发行版
-* 做工良好，可靠性强
-* 有**两个** PCI-E 插槽（分别为 x8 和 x1），未来升级万兆会很方便
-* 接口丰富：四个 USB 3.0、两个 USB 2.0、两个千兆以太网口、两个全尺寸 DP 和一个 VGA
-* 预装 8GB DDR4 **ECC** 内存
-* ……
+- 4 盘位（虽然并不是热插拔）
+- 低功耗（x3216 的 TDP 只有 15w）
+- 主机本身是正常的 x86 PC，可以很方便的安装各种主流 Linux 发行版
+- 做工良好，可靠性强
+- 有**两个** PCI-E 插槽（分别为 x8 和 x1），未来升级万兆会很方便
+- 接口丰富：四个 USB 3.0、两个 USB 2.0、两个千兆以太网口、两个全尺寸 DP 和一个 VGA
+- 预装 8GB DDR4 **ECC** 内存
+- ……
 
 就这样，我以 2.8k CNY 的价格在美亚拿下了这玩意。其实我一开始考虑从德亚买的，只要 2.5k（当时），但是并不能直邮到中国。为了省事，我就直接在美亚买了。
 
@@ -48,9 +48,9 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 1. 从硬盘仓顶部拧下来 4 颗螺丝
 2. 把这 4 颗螺丝拧到硬盘两侧最左面和最右面的孔位上  
-![硬盘上的螺丝](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_11.jpg)
+   ![硬盘上的螺丝](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_11.jpg)
 3. 把硬盘正面朝右，稍微用力的推进硬盘仓。移除硬盘也是超级容易的（见硬盘仓左下角贴纸）：  
-![硬盘仓（安装后）](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_12.jpg)
+   ![硬盘仓（安装后）](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_12.jpg)
 
 然后就开始安装系统 SSD 了。这玩意并没有 M.2 NVMe 插槽，但是在主板上提供了一个额外的 SATA 接口，所以我买了一块普通的 SATA SSD。
 
@@ -68,18 +68,18 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 我选用的是 Ubuntu 18.04 LTS。因为：
 
-* Ubuntu 是我熟悉的发行版系列
-* 我拥有充分的控制能力
+- Ubuntu 是我熟悉的发行版系列
+- 我拥有充分的控制能力
 
 安装过程没什么坑，一切都在预料之中。随后，我通过 apt 安装了各种我需要的软件（nginx、Aria2、Transmission 等），写好 `/etc/fstab` 表，就大功告成了。
 
 目前，我的硬盘使用情况如下：
 
-| 硬盘 | 安装位置 | 用途 |
-|:---|:---|:---|
-| 东芝 240G SSD（TR200） | 顶部 | 系统盘 |
+| 硬盘                          | 安装位置 | 用途         |
+| :---------------------------- | :------- | :----------- |
+| 东芝 240G SSD（TR200）        | 顶部     | 系统盘       |
 | 东芝 2T 监控盘（DT01ABA200V） | 硬盘仓 1 | 一般文件存储 |
-| 西数 4T 蓝盘（WD40EZRZ） | 硬盘仓 2 | BT/PT 下载 |
+| 西数 4T 蓝盘（WD40EZRZ）      | 硬盘仓 2 | BT/PT 下载   |
 
 同时，我还有一块 2T 的东芝移动硬盘用于冷备份；我会定期将它连接到 Gen10 上，运行我的脚本来进行 rsync。
 
@@ -101,6 +101,6 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 ![neofetch](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/Snipaste_2020-01-12_00-09-16.png)
 
-***
+---
 
 <div class="video-container"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/p3itJBdn5FY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>

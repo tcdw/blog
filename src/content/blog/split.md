@@ -1,7 +1,7 @@
 ---
-title: '黑历史：在 Flash 里手撕 HTML 与 JSON'
-description: '2010 年，还是小学生的我，为了开发更好的 Flash 应用，决定使用一些知名网站的结果，实现我的梦想！  我很早就学会了 JavaScript 的 split 和 join 方法，然而我想用一些替换功能，把 HTML 的一些段落替换掉再拆解。我开动脑洞，发明了这个：  javascript'
-pubDate: '2017-04-14T06:09:01.000Z'
+title: "黑历史：在 Flash 里手撕 HTML 与 JSON"
+description: "2010 年，还是小学生的我，为了开发更好的 Flash 应用，决定使用一些知名网站的结果，实现我的梦想！  我很早就学会了 JavaScript 的 split 和 join 方法，然而我想用一些替换功能，把 HTML 的一些段落替换掉再拆解。我开动脑洞，发明了这个：  javascript"
+pubDate: "2017-04-14T06:09:01.000Z"
 ---
 
 2010 年，还是小学生的我，为了开发更好的 Flash 应用，决定使用一些知名网站的结果，实现我的梦想！
@@ -10,7 +10,7 @@ pubDate: '2017-04-14T06:09:01.000Z'
 
 ```javascript
 replace = function (a, b, c) {
-    return a.split(b).join(c);
+  return a.split(b).join(c);
 };
 ```
 
@@ -91,7 +91,7 @@ function readTB(tbn,nn) {
 readTB("永吧大水库",0);
 ```
 
-## 2012：手撕百度云实现外链解析 ##
+## 2012：手撕百度云实现外链解析
 
 半成品，仅适用于 2012 年内测版本的百度云。过了一段时间这半成品完全废了。
 
@@ -143,7 +143,8 @@ getBaidu = function (aaaa) {
 };
 getBaidu("tcdw2011");
 ```
-## 2012：手撕 115 JSON 实现外链解析 ##
+
+## 2012：手撕 115 JSON 实现外链解析
 
 我没有外链空间又想做 Flash 在线播放器，于是通过解析 115 外链，在 Flash 中实现了播放在 115 网盘分享的 MP3。
 
@@ -153,55 +154,55 @@ getBaidu("tcdw2011");
 // 此段代码略去了若干关于播放器本体的逻辑
 
 rr = function (a, b, c) {
-    return a.split(b).join(c);
+  return a.split(b).join(c);
 };
 get115link = function (aaaa) {
-    k = new LoadVars();
-    k.load("http://115.com/file/"+aaaa);
-    trace(aaaa);
-    k.onData = function(aaa) {
-        trace("网页部分完成");
-        asd = aaa;
-        asd = rr(asd, ' url: "', glfh);
-        asd = rr(asd, '",', glfh);
-        u0 = asd.split(glfh);
-        grl("http://115.com"+u0[1]);
-    };
+  k = new LoadVars();
+  k.load("http://115.com/file/" + aaaa);
+  trace(aaaa);
+  k.onData = function (aaa) {
+    trace("网页部分完成");
+    asd = aaa;
+    asd = rr(asd, ' url: "', glfh);
+    asd = rr(asd, '",', glfh);
+    u0 = asd.split(glfh);
+    grl("http://115.com" + u0[1]);
+  };
 };
 grl = function (kk) {
-    asd = "";
-    r = new LoadVars();
-    r.load(kk);
-    r.onData = function(aaa) {
-        asd = aaa;
-        trace("读地址部分完成");
-        asd = rr(asd, ',"url":"', glfh);
-        asd = rr(asd, '","desc":"', glfh2);
-        asd = rr(asd, '","weight":', glfh);
-        asd = rr(asd, '\/', "/");
-        asd = rr(asd, '//', "/");
-        u0 = asd.split(glfh);
-        asdasd0 = u0[1].split(glfh2)[0];
-        asdasd1 = u0[3].split(glfh2)[0];
-        trace(asdasd0);
-        trace(asdasd1);
-        my_sound = new Sound();
-        my_sound.loadSound(asdasd0,true);
-        my_sound.start(0,1);
-        // 后略
-    };
+  asd = "";
+  r = new LoadVars();
+  r.load(kk);
+  r.onData = function (aaa) {
+    asd = aaa;
+    trace("读地址部分完成");
+    asd = rr(asd, ',"url":"', glfh);
+    asd = rr(asd, '","desc":"', glfh2);
+    asd = rr(asd, '","weight":', glfh);
+    asd = rr(asd, "\/", "/");
+    asd = rr(asd, "//", "/");
+    u0 = asd.split(glfh);
+    asdasd0 = u0[1].split(glfh2)[0];
+    asdasd1 = u0[3].split(glfh2)[0];
+    trace(asdasd0);
+    trace(asdasd1);
+    my_sound = new Sound();
+    my_sound.loadSound(asdasd0, true);
+    my_sound.start(0, 1);
+    // 后略
+  };
 };
 ```
 
-## 2011：手撕 QQ 空间背景音乐列表 ##
+## 2011：手撕 QQ 空间背景音乐列表
 
 我很久以前就 [公开发布过](https://www.tcdw.net/read-bgm-list-qzone)，不过还没有考虑拿去做完整的 Flash 播放器，因为有防盗链限制。
 
-## 2010：手撕 soso 音乐 HTML 搜索结果 ##
+## 2010：手撕 soso 音乐 HTML 搜索结果
 
 也是为了制作播放器。
 
-### 第一帧 ###
+### 第一帧
 
 ```javascript
 stop();
@@ -268,7 +269,7 @@ function searchMp3(sPost:String, page:Number):Void {
 }
 ```
 
-### 第二帧 ###
+### 第二帧
 
 ```javascript
 if (mp3Data.indexOf(aa) == -1) {
@@ -338,7 +339,7 @@ str += "歌手：" + mp3Singer + "\n";
 str += "地址组：" + mp3URL.join("|") + "\r\n";
 ```
 
-## 野心 ##
+## 野心
 
 制作一个带音乐搜索、LRC 展示、高级管理功能的 Flash 音乐盒，震撼闪吧人。
 

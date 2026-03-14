@@ -1,7 +1,7 @@
 ---
-title: '拆解我爸 2010 年装的廉价 PC'
-description: '2010 年，我爸觉得我家的 P4 台式机太过时了，所以就花 2k 托人组装了一台新 PC。  然而这台 PC 不仅卡顿时常发生，而且非常不稳定，经常死机、蓝屏，期间我还被母上大人认为我是让那台 PC 不稳定的罪魁祸首，因为我安装的那么几款软件，结果我没少被母上大人数落。😒😒😒半年以后，那台机器突然无法开机，甚至不会 POST，然后我爸只好把同一位 JS 叫过来进行维修。然后，JS 把那块烧掉的双敏主板换掉了。'
-pubDate: '2019-01-18T09:54:26.000Z'
+title: "拆解我爸 2010 年装的廉价 PC"
+description: "2010 年，我爸觉得我家的 P4 台式机太过时了，所以就花 2k 托人组装了一台新 PC。  然而这台 PC 不仅卡顿时常发生，而且非常不稳定，经常死机、蓝屏，期间我还被母上大人认为我是让那台 PC 不稳定的罪魁祸首，因为我安装的那么几款软件，结果我没少被母上大人数落。😒😒😒半年以后，那台机器突然无法开机，甚至不会 POST，然后我爸只好把同一位 JS 叫过来进行维修。然后，JS 把那块烧掉的双敏主板换掉了。"
+pubDate: "2019-01-18T09:54:26.000Z"
 ---
 
 2010 年，我爸觉得我家的 P4 台式机太过时了，所以就花 2k 托人组装了一台新 PC。
@@ -38,7 +38,7 @@ pubDate: '2019-01-18T09:54:26.000Z'
 
 ![CPU 本体](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-4.jpg)
 
-[AMD Athlon 7750](http://www.cpu-world.com/CPUs/K10/AMD-Athlon%20X2%207750%20Black%20Edition%20-%20AD775ZWCJ2BGH%20(AD775ZWCGHBOX).html)。这台机器是 2010 年装的，但是据 `@qwe7002` 说，这片 CPU 在 2008 年就属于比较慢的了。
+[AMD Athlon 7750](<http://www.cpu-world.com/CPUs/K10/AMD-Athlon%20X2%207750%20Black%20Edition%20-%20AD775ZWCJ2BGH%20(AD775ZWCGHBOX).html>)。这台机器是 2010 年装的，但是据 `@qwe7002` 说，这片 CPU 在 2008 年就属于比较慢的了。
 
 ![擦干净的主板](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-9.jpg)
 

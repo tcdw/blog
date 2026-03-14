@@ -1,7 +1,7 @@
 ---
-title: '在 IE11 使用 CSS Grid 实现多列卡片列表布局'
-description: '我们维护的某网站需要多列布局的、分页的、内容高度不固定的卡片列表，效果如下：'
-pubDate: '2024-03-03T11:59:01.000Z'
+title: "在 IE11 使用 CSS Grid 实现多列卡片列表布局"
+description: "我们维护的某网站需要多列布局的、分页的、内容高度不固定的卡片列表，效果如下："
+pubDate: "2024-03-03T11:59:01.000Z"
 ---
 
 我们维护的某网站需要多列布局的、分页的、**内容高度不固定**的卡片列表，效果如下：
@@ -18,9 +18,9 @@ pubDate: '2024-03-03T11:59:01.000Z'
 
 ```css
 .grid-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 ```
 
@@ -36,12 +36,12 @@ pubDate: '2024-03-03T11:59:01.000Z'
 我们的项目使用到了 SCSS、PostCSS 和 Autoprefixer，所以，首先在 `postcss.config.js` 中声明使用针对 IE11 的 CSS Grid 转译：
 
 ```javascript
-module.exports = {  
-    plugins: {  
-        autoprefixer: {  
-            grid: "autoplace"
-        }  
-    }  
+module.exports = {
+  plugins: {
+    autoprefixer: {
+      grid: "autoplace",
+    },
+  },
 };
 ```
 
@@ -49,14 +49,14 @@ module.exports = {
 
 ```scss
 @mixin gridList($maxRow, $column, $rowSize: auto, $columnSize: 1fr, $gapX: 0, $gapY: 0) {
-    @for $i from 1 through $maxRow {
-        &--grid-#{$i} {
-            display: grid;
-            grid-template-columns: repeat(#{$column}, #{$columnSize});
-            grid-template-rows: repeat(#{$i}, #{$rowSize});
-            gap: $gapY $gapX;
-        }
+  @for $i from 1 through $maxRow {
+    &--grid-#{$i} {
+      display: grid;
+      grid-template-columns: repeat(#{$column}, #{$columnSize});
+      grid-template-rows: repeat(#{$i}, #{$rowSize});
+      gap: $gapY $gapX;
     }
+  }
 }
 ```
 
@@ -64,8 +64,8 @@ module.exports = {
 
 ```scss
 .grid-list {
-    padding: 30px;
-    @include gridList(3, 3, $gapX: 30px, $gapY: 30px)
+  padding: 30px;
+  @include gridList(3, 3, $gapX: 30px, $gapY: 30px);
 }
 ```
 
@@ -102,7 +102,6 @@ module.exports = {
   grid-template-rows: repeat(3, auto);
   gap: 30px 30px;
 }
-
 ```
 
 这样，我们就得到了行数有一行、两行和三行时所对应的 CSS 类。我们只要在生成模板时，使用对应的 CSS 类即可：
@@ -110,11 +109,11 @@ module.exports = {
 ```html
 <!-- 以下伪代码仅供参考，实际使用时请替换为你使用的模板引擎/界面库的语法 -->
 <ul class="demo-list demo-list--grid-{{ Math.ceil(Page.PageList.length / 3) }}">
-	{%- for PageItem in Page.PageList -%}  
-		<li class="demo-card">
-			<!-- 略 -->
-		</li>
-    {%- endfor -%}
+  {%- for PageItem in Page.PageList -%}
+  <li class="demo-card">
+    <!-- 略 -->
+  </li>
+  {%- endfor -%}
 </ul>
 ```
 
@@ -190,7 +189,7 @@ IE 使用的旧版规范属性是以 `-ms-` 开头的，同时我们还需要通
   -ms-grid-column: 5;
 }
 
-/* 后略... you get the idea */ 
+/* 后略... you get the idea */
 ```
 
 ### 结论

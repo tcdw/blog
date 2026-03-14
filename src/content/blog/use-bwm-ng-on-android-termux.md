@@ -1,7 +1,7 @@
 ---
-title: '在 Termux 编译和使用 bwm-ng（需要 root）'
-description: 'bwm-ng 是一个很方便的命令行工具，可以实时监控操作系统的网速和磁盘读写速度。'
-pubDate: '2023-05-05T17:26:55.000Z'
+title: "在 Termux 编译和使用 bwm-ng（需要 root）"
+description: "bwm-ng 是一个很方便的命令行工具，可以实时监控操作系统的网速和磁盘读写速度。"
+pubDate: "2023-05-05T17:26:55.000Z"
 ---
 
 [bwm-ng](https://github.com/vgropp/bwm-ng) 是一个很方便的命令行工具，可以实时监控操作系统的网速和磁盘读写速度。

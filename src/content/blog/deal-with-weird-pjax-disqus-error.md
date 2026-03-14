@@ -1,7 +1,7 @@
 ---
-title: 'Disqus + PJAX 后的小错误修复'
-description: '自从我在我的博客同时使用 Disqus 评论框和 PJAX 成功后，那叫一个酸爽！  然而细心的访客会发现，如果访问网站首页，打开浏览器控制台，会出现以下错误：      Uncaught TypeError: Cannot read property ''appendChild'' of null'
-pubDate: '2015-10-20T06:42:35.000Z'
+title: "Disqus + PJAX 后的小错误修复"
+description: "自从我在我的博客同时使用 Disqus 评论框和 PJAX 成功后，那叫一个酸爽！  然而细心的访客会发现，如果访问网站首页，打开浏览器控制台，会出现以下错误：      Uncaught TypeError: Cannot read property 'appendChild' of null"
+pubDate: "2015-10-20T06:42:35.000Z"
 ---
 
 自从我在我的博客同时使用 Disqus 评论框和 PJAX 成功后，那叫一个酸爽！
@@ -12,7 +12,7 @@ pubDate: '2015-10-20T06:42:35.000Z'
 
 尽管这并不影响博客功能，但看上去太令人不爽了！
 
-## 解决它 ##
+## 解决它
 
 经过排查，发现是因为 Disqus 脚本在没有评论框的网站首页被运行了，而由于找不到评论框，就会出现上述错误。
 
@@ -22,7 +22,7 @@ pubDate: '2015-10-20T06:42:35.000Z'
 
     recheckDQ = function () {
         if($('#disqus_thread').length) {
-		    if(window.DISQUS) {
+    	    if(window.DISQUS) {
                 DISQUS.reset({
                 reload: true
                 });

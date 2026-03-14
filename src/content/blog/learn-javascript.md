@@ -1,8 +1,8 @@
 ---
-title: 'tcdw 与 ECMAScript'
-description: '其实 tcdw 小时候并没有对计算机特别感兴趣，tcdw 曾经的梦想是当一名建筑设计师。但是，因为在 tcdw 很小的时候家里就有了一台电脑，tcdw 还是玩了很多奇怪的东西，包括 Frontpage 2003。  那时 tcdw 出于好玩的目的，设计了一个又一个版本的个人网站框架，除了内容。 tcdw 还设计了一套自己的『前端样式库』（其实只是在 Frontpage 的 CSS 选项菜单里把所有 HTML 标签都那么定义了一下样式）。'
-pubDate: '2018-05-27T01:23:46.000Z'
-updatedDate: '2024-06-07T14:42:23.000Z'
+title: "tcdw 与 ECMAScript"
+description: "其实 tcdw 小时候并没有对计算机特别感兴趣，tcdw 曾经的梦想是当一名建筑设计师。但是，因为在 tcdw 很小的时候家里就有了一台电脑，tcdw 还是玩了很多奇怪的东西，包括 Frontpage 2003。  那时 tcdw 出于好玩的目的，设计了一个又一个版本的个人网站框架，除了内容。 tcdw 还设计了一套自己的『前端样式库』（其实只是在 Frontpage 的 CSS 选项菜单里把所有 HTML 标签都那么定义了一下样式）。"
+pubDate: "2018-05-27T01:23:46.000Z"
+updatedDate: "2024-06-07T14:42:23.000Z"
 ---
 
 其实 tcdw 小时候并没有对计算机特别感兴趣，tcdw 曾经的梦想是当一名建筑设计师。但是，因为在 tcdw 很小的时候家里就有了一台电脑，tcdw 还是玩了很多奇怪的东西，包括 Frontpage 2003。
@@ -76,10 +76,10 @@ updatedDate: '2024-06-07T14:42:23.000Z'
 ```javascript
 var fs = require("fs");
 var str;
-fs.readFile("1.txt", {encoding: "utf8"}, function(err, txt){
-    if (err) throw err;
-    console.log("文件读取成功！");
-    str = txt;
+fs.readFile("1.txt", { encoding: "utf8" }, function (err, txt) {
+  if (err) throw err;
+  console.log("文件读取成功！");
+  str = txt;
 });
 console.log(str);
 ```

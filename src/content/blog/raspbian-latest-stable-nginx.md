@@ -1,7 +1,7 @@
 ---
-title: '在树莓派（Raspbian）上安装最新稳定版 nginx'
-description: '如果需要在 Raspbian 上安装最新稳定版 nginx，其实官方是 提供了 Debian 的 apt 源 的，但是并没有提供 armhf 的二进制文件。  于是，我们只好自己通过 Debian 的方式编译安装了。   此方法优点   安装好的 nginx，配置文件路径、维护方法等与官方 Debian 版 nginx 一致。'
-pubDate: '2019-11-05T03:35:40.000Z'
+title: "在树莓派（Raspbian）上安装最新稳定版 nginx"
+description: "如果需要在 Raspbian 上安装最新稳定版 nginx，其实官方是 提供了 Debian 的 apt 源 的，但是并没有提供 armhf 的二进制文件。  于是，我们只好自己通过 Debian 的方式编译安装了。   此方法优点   安装好的 nginx，配置文件路径、维护方法等与官方 Debian 版 nginx 一致。"
+pubDate: "2019-11-05T03:35:40.000Z"
 ---
 
 如果需要在 Raspbian 上安装**最新稳定版 nginx**，其实官方是 [提供了 Debian 的 apt 源](http://nginx.org/en/linux_packages.html#Debian) 的，但是并没有提供 `armhf` 的二进制文件。
@@ -10,8 +10,8 @@ pubDate: '2019-11-05T03:35:40.000Z'
 
 ## 此方法优点
 
-* 安装好的 nginx，配置文件路径、维护方法等与官方 Debian 版 nginx **一致**。
-* 如果需要卸载 nginx，只需执行 `sudo apt purge nginx`。
+- 安装好的 nginx，配置文件路径、维护方法等与官方 Debian 版 nginx **一致**。
+- 如果需要卸载 nginx，只需执行 `sudo apt purge nginx`。
 
 ## 步骤
 

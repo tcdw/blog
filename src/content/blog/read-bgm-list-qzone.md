@@ -1,7 +1,7 @@
 ---
-title: '用 Flash 实现读取 QQ 空间背景音乐列表'
-description: '代码如下：  javascript System.useCodepage=true; var singer:Array=new Array(); var songname:Array=new Array(); var songurl:Array=new Array(); function a(a, b, c) {'
-pubDate: '2011-08-30T10:03:00.000Z'
+title: "用 Flash 实现读取 QQ 空间背景音乐列表"
+description: "代码如下：  javascript System.useCodepage=true; var singer:Array=new Array(); var songname:Array=new Array(); var songurl:Array=new Array(); function a(a, b, c) {"
+pubDate: "2011-08-30T10:03:00.000Z"
 ---
 
 代码如下：

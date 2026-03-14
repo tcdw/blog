@@ -1,8 +1,8 @@
 ---
-title: '不用 eas-cli 编译 React Native (Expo) 应用的 Android 版本'
-description: '为什么不用 eas'
-pubDate: '2024-08-30T06:10:45.000Z'
-updatedDate: '2025-04-13T12:39:21.000Z'
+title: "不用 eas-cli 编译 React Native (Expo) 应用的 Android 版本"
+description: "为什么不用 eas"
+pubDate: "2024-08-30T06:10:45.000Z"
+updatedDate: "2025-04-13T12:39:21.000Z"
 ---
 
 ### 为什么不用 eas-cli
@@ -20,7 +20,7 @@ updatedDate: '2025-04-13T12:39:21.000Z'
 
 ### 配置 Keystore
 
-为了让编译出来的应用使用我们自己的 Keystore，我们需要修改 `android/app/build.gradle`  文件，在 `signingConfigs`  加入自己的 Keystore 信息，并且在 `buildTypes` 的 `release` 中设置 `signingConfig signingConfigs.release` 。
+为了让编译出来的应用使用我们自己的 Keystore，我们需要修改 `android/app/build.gradle` 文件，在 `signingConfigs` 加入自己的 Keystore 信息，并且在 `buildTypes` 的 `release` 中设置 `signingConfig signingConfigs.release` 。
 
 由于我们的项目使用 Expo Managed Workflow，为了确保 Native 部分不会出现不同步的问题，这里通过编写项目级插件的方式实现修改：
 
@@ -32,44 +32,44 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = function withAndroidSignature(config) {
-    return withAppBuildGradle(config, config => {
-        if (config.modResults.language === "groovy") {
-            config.modResults.contents = setAndroidSignature(config.modResults.contents);
-        } else {
-            throw new Error("如果不是 groovy，则无法在 app/build.gradle 中设置 signingConfigs");
-        }
-        return config;
-    });
+  return withAppBuildGradle(config, config => {
+    if (config.modResults.language === "groovy") {
+      config.modResults.contents = setAndroidSignature(config.modResults.contents);
+    } else {
+      throw new Error("如果不是 groovy，则无法在 app/build.gradle 中设置 signingConfigs");
+    }
+    return config;
+  });
 };
 
 function setAndroidSignature(appBuildGradle) {
-    if (!fs.existsSync(path.resolve(__dirname, "../credentials.json"))) {
-        console.warn("警告：没有设置正式版本的 Android Keystore 文件，因为 credentials.json 不存在。");
-        return appBuildGradle;
-    }
-    const info = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../credentials.json"), { encoding: "utf8" }));
+  if (!fs.existsSync(path.resolve(__dirname, "../credentials.json"))) {
+    console.warn("警告：没有设置正式版本的 Android Keystore 文件，因为 credentials.json 不存在。");
+    return appBuildGradle;
+  }
+  const info = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../credentials.json"), { encoding: "utf8" }));
 
-    // 使用正则表达式插入签名信息
-    let output = appBuildGradle.replace(
-        /(signingConfigs\s*\{)/,
-        `$1
+  // 使用正则表达式插入签名信息
+  let output = appBuildGradle.replace(
+    /(signingConfigs\s*\{)/,
+    `$1
         release {
             storeFile file(${JSON.stringify(path.resolve(__dirname, "../credentials/android-release.keystore"))})
             storePassword ${JSON.stringify(info.android.keystore.keystorePassword)}
             keyAlias ${JSON.stringify(info.android.keystore.keyAlias)}
             keyPassword ${JSON.stringify(info.android.keystore.keyPassword)}
         }`,
-    );
+  );
 
-    // 使用正则表达式替换 signingConfig
-    output = output.replace(
-        /(release\s*\{)[^}]*?signingConfig\s+signingConfigs\.debug/s,
-        `$1
+  // 使用正则表达式替换 signingConfig
+  output = output.replace(
+    /(release\s*\{)[^}]*?signingConfig\s+signingConfigs\.debug/s,
+    `$1
             signingConfig signingConfigs.release
 `,
-    );
+  );
 
-    return output;
+  return output;
 }
 ```
 
@@ -78,34 +78,32 @@ function setAndroidSignature(appBuildGradle) {
 （这里的 `credentials.json` 文件格式与 Expo 文档中的 [Use local credentials](https://docs.expo.dev/app-signing/local-credentials/) 一致）
 
 ```json
-{  
-  "android": {  
-    "keystore": {  
-      "keystorePath": "credentials/android-release.keystore",  
-      "keystorePassword": "your keystore password",  
-      "keyAlias": "your key alias",  
-      "keyPassword": "your key password"  
-    }  
-  },  
-  "ios": {  
-    "provisioningProfilePath": "ios/certs/profile.mobileprovision",  
-    "distributionCertificate": {  
-      "path": "ios/certs/dist-cert.p12",  
-      "password": "password"  
-    }  
-  }  
+{
+  "android": {
+    "keystore": {
+      "keystorePath": "credentials/android-release.keystore",
+      "keystorePassword": "your keystore password",
+      "keyAlias": "your key alias",
+      "keyPassword": "your key password"
+    }
+  },
+  "ios": {
+    "provisioningProfilePath": "ios/certs/profile.mobileprovision",
+    "distributionCertificate": {
+      "path": "ios/certs/dist-cert.p12",
+      "password": "password"
+    }
+  }
 }
 ```
 
 然后，在 `app.json` 中指定这个项目级插件：
 
 ```json
-{  
-  "expo": {  
-    "plugins": [  
-      "./plugins/withAndroidSignature"
-    ]
-  }  
+{
+  "expo": {
+    "plugins": ["./plugins/withAndroidSignature"]
+  }
 }
 ```
 
@@ -152,7 +150,7 @@ cd android
 ```text
 /credentials/*.keystore
 /credentials.json
-  
+
 /ios
 /android
 ```

@@ -1,14 +1,14 @@
 ---
-title: '切换到 Ghost'
-description: '2017 更新  我不用 Ghost 了，因为它比 WordPress 臃肿，却比 WordPress 简陋的很。于是，我切换到了 SilverBlog。    我实在不想再在 Typecho 上折腾下去了。不算好用的编辑器、对触屏设备不友好的管理菜单、各种奇怪的小毛病、长期不更新……使我最终放弃了 Typecho。'
-pubDate: '2015-06-02T18:40:10.000Z'
+title: "切换到 Ghost"
+description: "2017 更新  我不用 Ghost 了，因为它比 WordPress 臃肿，却比 WordPress 简陋的很。于是，我切换到了 SilverBlog。    我实在不想再在 Typecho 上折腾下去了。不算好用的编辑器、对触屏设备不友好的管理菜单、各种奇怪的小毛病、长期不更新……使我最终放弃了 Typecho。"
+pubDate: "2015-06-02T18:40:10.000Z"
 ---
 
 ## 2017 更新
 
 我不用 Ghost 了，因为它比 WordPress 臃肿，却比 WordPress 简陋的很。于是，我切换到了 [SilverBlog](https://github.com/SilverBlogTeam/SilverBlog)。
 
-***
+---
 
 我实在不想再在 Typecho 上折腾下去了。不算好用的编辑器、对触屏设备不友好的管理菜单、各种奇怪的小毛病、长期不更新……使我最终放弃了 Typecho。
 
@@ -16,7 +16,7 @@ pubDate: '2015-06-02T18:40:10.000Z'
 
 在切换过程中，对于一些问题我是这样解决的：
 
-## 永久链接 ##
+## 永久链接
 
 由于 Ghost 要求所有文章的永久链接均以 / 结尾，导致原来的 `/archives/xxx.html` 不可用。
 
@@ -24,7 +24,7 @@ pubDate: '2015-06-02T18:40:10.000Z'
 
     rewrite ^/archives/(.*).html https://www.tcdw.net/$1/ permanent;
 
-## 评论框 ##
+## 评论框
 
 以前的站点一直使用原生评论框，但 Ghost 没有，所以只好采用第三方评论框。
 
@@ -35,7 +35,7 @@ pubDate: '2015-06-02T18:40:10.000Z'
 
 至于以前的评论是无力转移了，但是我把它们存放到~~旧站备份~~里了，以便查阅。
 
-## 总结 ##
+## 总结
 
 虽然 Ghost 依然有一些不尽如人意的地方，但它作为一款新的博客程序，是情有可原的。
 

@@ -1,8 +1,8 @@
 ---
-title: '如何在已有的 Vue CLI 项目使用 esbuild'
-description: 'EDIT: 其实可以试着用相同的方法把 Babel 换成 SWC，因为它最低可以编译到 ES5。不过我现在不需要负责这个兼容 IE11 的项目了哈哈哈哈'
-pubDate: '2022-04-16T06:20:11.000Z'
-updatedDate: '2025-02-20T09:54:29.000Z'
+title: "如何在已有的 Vue CLI 项目使用 esbuild"
+description: "EDIT: 其实可以试着用相同的方法把 Babel 换成 SWC，因为它最低可以编译到 ES5。不过我现在不需要负责这个兼容 IE11 的项目了哈哈哈哈"
+pubDate: "2022-04-16T06:20:11.000Z"
+updatedDate: "2025-02-20T09:54:29.000Z"
 ---
 
 EDIT 2: Vue CLI 都凉了，建议更换 Rspack
@@ -72,33 +72,36 @@ config.module.rule("ts").uses.clear();
 config.module.rule("tsx").uses.clear();
 
 // 注入使用 `esbuild-loader` 的新规则
-config.module.rule("js")
-    .test(/\.m?jsx?$/)
-    .use("esbuild-loader")
-    .loader("esbuild-loader")
-    .options({
-        loader: "jsx",
-        target: "es2015"
-    })
-    .end();
-config.module.rule("ts")
-    .test(/\.ts$/)
-    .use("esbuild-loader")
-    .loader("esbuild-loader")
-    .options({
-        loader: "ts",
-        target: "es2015"
-    })
-    .end();
-config.module.rule("tsx")
-    .test(/\.tsx$/)
-    .use("esbuild-loader")
-    .loader("esbuild-loader")
-    .options({
-        loader: "tsx",
-        target: "es2015"
-    })
-    .end();
+config.module
+  .rule("js")
+  .test(/\.m?jsx?$/)
+  .use("esbuild-loader")
+  .loader("esbuild-loader")
+  .options({
+    loader: "jsx",
+    target: "es2015",
+  })
+  .end();
+config.module
+  .rule("ts")
+  .test(/\.ts$/)
+  .use("esbuild-loader")
+  .loader("esbuild-loader")
+  .options({
+    loader: "ts",
+    target: "es2015",
+  })
+  .end();
+config.module
+  .rule("tsx")
+  .test(/\.tsx$/)
+  .use("esbuild-loader")
+  .loader("esbuild-loader")
+  .options({
+    loader: "tsx",
+    target: "es2015",
+  })
+  .end();
 ```
 
 就可以了。

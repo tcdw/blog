@@ -1,8 +1,8 @@
 ---
-title: '【更正版】简单实现类型安全的、能触发 CustomEvent 的 EventTarget'
-description: '我想写一个 TypeScript 类，这个类提供一系列的事件可供监听。为了实现类型安全，改进开发体验，我自己研究了一下，实现了一个可以以泛型输入所有可能的事件类型的 TypedEventTarget 类。'
-pubDate: '2024-03-31T15:59:24.000Z'
-updatedDate: '2024-07-18T09:29:10.000Z'
+title: "【更正版】简单实现类型安全的、能触发 CustomEvent 的 EventTarget"
+description: "我想写一个 TypeScript 类，这个类提供一系列的事件可供监听。为了实现类型安全，改进开发体验，我自己研究了一下，实现了一个可以以泛型输入所有可能的事件类型的 TypedEventTarget 类。"
+pubDate: "2024-03-31T15:59:24.000Z"
+updatedDate: "2024-07-18T09:29:10.000Z"
 ---
 
 我想写一个 TypeScript 类，这个类提供一系列的事件可供监听。为了实现类型安全，改进开发体验，我自己研究了一下，实现了一个可以以泛型输入所有可能的事件类型的 TypedEventTarget 类。
@@ -13,32 +13,32 @@ updatedDate: '2024-07-18T09:29:10.000Z'
 
 ```typescript
 export class TypedEventTarget<T> extends EventTarget {
-    // 这个类型体操是我从 `lib.dom.d.ts` 抄的我会乱说（
-    addEventListener<K extends keyof T>(
-        type: K,
-        listener: (this: TypedEventTarget<T>, ev: TypedCustomEvent<K, T[K]>) => any,
-        options?: boolean | AddEventListenerOptions,
-    ): void;
-    addEventListener(
-        type: string,
-        listener: EventListenerOrEventListenerObject,
-        options?: boolean | AddEventListenerOptions,
-    ): void;
-    removeEventListener<K extends keyof T>(
-        type: K,
-        listener: (this: TypedEventTarget<T>, ev: TypedCustomEvent<K, T[K]>) => any,
-        options?: boolean | EventListenerOptions,
-    ): void;
-    removeEventListener(
-        type: string,
-        listener: EventListenerOrEventListenerObject,
-        options?: boolean | EventListenerOptions,
-    ): void;
-    dispatchEvent<K extends keyof T>(event: TypedCustomEvent<K, T[K]>): void;
+  // 这个类型体操是我从 `lib.dom.d.ts` 抄的我会乱说（
+  addEventListener<K extends keyof T>(
+    type: K,
+    listener: (this: TypedEventTarget<T>, ev: TypedCustomEvent<K, T[K]>) => any,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions,
+  ): void;
+  removeEventListener<K extends keyof T>(
+    type: K,
+    listener: (this: TypedEventTarget<T>, ev: TypedCustomEvent<K, T[K]>) => any,
+    options?: boolean | EventListenerOptions,
+  ): void;
+  removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions,
+  ): void;
+  dispatchEvent<K extends keyof T>(event: TypedCustomEvent<K, T[K]>): void;
 }
 
 export class TypedCustomEvent<S, T> extends CustomEvent<T> {
-    constructor(type: S, eventInitDict?: CustomEventInit<T> | undefined);
+  constructor(type: S, eventInitDict?: CustomEventInit<T> | undefined);
 }
 ```
 
@@ -63,38 +63,38 @@ import { TypedEventTarget, TypedCustomEvent } from "@/utils/typed-event-target";
 
 // 创建 Person 类的事件表
 export interface PersonEventMap {
-    nameChange: string;
-    ageChange: number;
+  nameChange: string;
+  ageChange: number;
 }
 
 export default class Person extends TypedEventTarget<PersonEventMap> {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 
-    constructor(name: string, age: number) {
-        super();
-        this.name = name;
-        this.age = age;
-    }
+  constructor(name: string, age: number) {
+    super();
+    this.name = name;
+    this.age = age;
+  }
 
-    setName(name: string) {
-        this.name = name;
-        // 在使用 dispatchEvent 时，如果类型不正确，会出现错误
-        this.dispatchEvent<"nameChange">(
-            new CustomEvent("nameChange", {
-                detail: name,
-            }),
-        );
-    }
+  setName(name: string) {
+    this.name = name;
+    // 在使用 dispatchEvent 时，如果类型不正确，会出现错误
+    this.dispatchEvent<"nameChange">(
+      new CustomEvent("nameChange", {
+        detail: name,
+      }),
+    );
+  }
 
-    setAge(age: number) {
-        this.age = age;
-        this.dispatchEvent<"ageChange">(
-            new CustomEvent("ageChange", {
-                detail: age,
-            }),
-        );
-    }
+  setAge(age: number) {
+    this.age = age;
+    this.dispatchEvent<"ageChange">(
+      new CustomEvent("ageChange", {
+        detail: age,
+      }),
+    );
+  }
 }
 ```
 
@@ -144,20 +144,20 @@ export default EventTarget;
 
 // 创建 Person 类的事件表
 export interface PersonEventMap {
-    nameChange: CustomEvent&lt;string&gt;;
-    ageChange: CustomEvent&lt;number&gt;;
+nameChange: CustomEvent&lt;string&gt;;
+ageChange: CustomEvent&lt;number&gt;;
 }
 
 export default class Person extends TypedEventTarget&lt;PersonEventMap&gt; {
-    name: string;
-    age: number;
-    
+name: string;
+age: number;
+
     constructor(name: string, age: number) {
         super();
         this.name = name;
         this.age = age;
     }
-    
+
     setName(name: string) {
         this.name = name;
         // 在使用 dispatchEvent 时，如果类型不正确，会出现错误
@@ -167,7 +167,7 @@ export default class Person extends TypedEventTarget&lt;PersonEventMap&gt; {
             }),
         );
     }
-        
+
     setAge(age: number) {
         this.age = age;
         this.dispatchEvent&lt;"ageChange"&gt;(
@@ -176,8 +176,10 @@ export default class Person extends TypedEventTarget&lt;PersonEventMap&gt; {
             }),
         );
     }
+
 }
 </code></pre>
+
 <p>调用这个类时，我们绑定事件也会有正确的补全提示和类型检查：</p>
 <figure>
   <img src="https://file.tcdw.net/blog-res/2024/type-hint-1.webp" alt="类型提示">
@@ -188,6 +190,5 @@ export default class Person extends TypedEventTarget&lt;PersonEventMap&gt; {
   <img src="https://file.tcdw.net/blog-res/2024/type-hint-2.webp" alt="类型提示">
     <figcaption>调用事件的详情内容时，推导出来的类型也是准确的。</figcaption>
 </figure></details>
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3TYDBtJBxRw?si=waQibB33GtJKhC8n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

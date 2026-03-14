@@ -1,7 +1,7 @@
 ---
-title: '在 Intel 版 MacBook Pro 以 EFI 的形式安装 Windows 10'
-description: '为什么？'
-pubDate: '2020-09-25T15:38:30.000Z'
+title: "在 Intel 版 MacBook Pro 以 EFI 的形式安装 Windows 10"
+description: "为什么？"
+pubDate: "2020-09-25T15:38:30.000Z"
 ---
 
 ## 为什么？
@@ -18,20 +18,20 @@ pubDate: '2020-09-25T15:38:30.000Z'
 
 ## 准备材料
 
-* [Windows 10 ISO](https://www.microsoft.com/zh-cn/software-download/windows10ISO)
-* [UNetbootin](https://unetbootin.github.io/)
-* 8G 以上的 U 盘（建议使用 USB 3.0 的）
-* USB Hub（建议使用 USB 3.0 的）
-* 支持 Windows 的键鼠套装（在安装完整的 Bootcamp 驱动以前，内置键盘和触摸板用不了的）
-* 机智的你
+- [Windows 10 ISO](https://www.microsoft.com/zh-cn/software-download/windows10ISO)
+- [UNetbootin](https://unetbootin.github.io/)
+- 8G 以上的 U 盘（建议使用 USB 3.0 的）
+- USB Hub（建议使用 USB 3.0 的）
+- 支持 Windows 的键鼠套装（在安装完整的 Bootcamp 驱动以前，内置键盘和触摸板用不了的）
+- 机智的你
 
 **如果你使用的是带 T2 芯片的新款机型，请先根据 [官方说明](https://support.apple.com/zh-cn/HT208330) 允许通过外部 USB 设备启动。**
 
 ## 我的安装环境
 
-* 机型：MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
-* 操作系统：macOS 10.13.5 (17F77)
-* 磁盘：256GB，只有 macOS 分区
+- 机型：MacBook Pro (13-inch, 2017, Two Thunderbolt 3 ports)
+- 操作系统：macOS 10.13.5 (17F77)
+- 磁盘：256GB，只有 macOS 分区
 
 ## 分出 Windows 分区
 
@@ -65,7 +65,6 @@ diskutil apfs resizeContainer disk1 200GB    # 200GB 指你给 macOS 留的分�
 
 ![下载 Windows 支持软件](https://assets.tcdww.cn/website/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/windows_support_dl.png)
 
-
 ## 如果你尝试过 Boot Camp 安装
 
 **如果你没有尝试过 Boot Camp 安装，请跳过这一节！**
@@ -94,6 +93,6 @@ diskutil apfs resizeContainer disk1 200GB    # 200GB 指你给 macOS 留的分�
 
 ## （在我设备上的）已知问题
 
-* Windows 睡眠时间过长以后，你需要经过完整的开机过程才能还原。
-* 每次返回 macOS，你恐怕都需要按住 Option 键手工选择 macOS 分区。在设置里改 **启动磁盘** 不管用。
-* 蓝牙工作异常
+- Windows 睡眠时间过长以后，你需要经过完整的开机过程才能还原。
+- 每次返回 macOS，你恐怕都需要按住 Option 键手工选择 macOS 分区。在设置里改 **启动磁盘** 不管用。
+- 蓝牙工作异常
