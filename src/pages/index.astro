@@ -2,14 +2,41 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_AUTHOR_AVATAR } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/Container.astro";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <Header hasTitle={false} />
-  <Container defaultPadding={true}>To be filled...</Container>
+  <Container defaultPadding={true}>
+    <div class="grid grid-cols-2">
+      <div>
+        <div>
+          <Image src={SITE_AUTHOR_AVATAR} width={128} densities={[1, 2, 3]} alt={"Avatar"} />
+          <h2>tcdw</h2>
+          <p>小透明前端（Web/移动端）开发者，是 React Native （Expo） 用户。</p>
+          <p>在北京当社畜。</p>
+          <p>喜欢观察城市、喜欢工业之美。</p>
+          <p>是普通人。</p>
+          <p>希望与你交朋友！</p>
+        </div>
+        <!-- icon -->
+        <ul class="flex">
+          <li><a href="https://github.com/tcdw">GitHub</a></li>
+          <li><a href="https://x.com/tcdwww">X (Twitter)</a></li>
+          <li><a href="https://youtube.com/@tcdwww">YouTube</a></li>
+          <li><a href="https://bsky.app/profile/tcdw.net">Bluesky</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>技术栈</h2>
+        <p>TypeScript, Go, React, Tailwind CSS, Astro, Next.js...</p>
+      </div>
+    </div>
+  </Container>
   <Footer />
 </BaseLayout>
