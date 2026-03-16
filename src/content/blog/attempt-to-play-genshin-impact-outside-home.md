@@ -103,4 +103,4 @@ Update: 如果你是原神国服玩家，还可以考虑一下官方的**云・�
 
 然后我靠着免费的原石抽到了她（
 
-![优菈](https://assets.tcdww.cn/website/blog/post/0ec36dee-1df2-4e47-a2ad-f7930af5473e/AJCKZ1Urns7fEvD.png)
+![优菈](https://file.tcdw.net/blog/post/0ec36dee-1df2-4e47-a2ad-f7930af5473e/AJCKZ1Urns7fEvD.png)

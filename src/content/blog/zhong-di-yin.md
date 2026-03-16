@@ -20,6 +20,6 @@ pubDate: "2015-07-15T07:26:53.000Z"
 
 我买过一些地摊货耳机，但没见过这么糟的。这质量实在没法恭维。
 
-[1]: //img.tcdww.cn/2015/1664388791.jpg
-[2]: //img.tcdww.cn/2015/3561527722.jpg
-[3]: //img.tcdww.cn/2015/3761643472.jpg
+[1]: https://file.tcdw.net/blog/post/8b73f37b-814e-5da2-b7bb-90a95f021520/1664388791.jpg
+[2]: https://file.tcdw.net/blog/post/8b73f37b-814e-5da2-b7bb-90a95f021520/3561527722.jpg
+[3]: https://file.tcdw.net/blog/post/8b73f37b-814e-5da2-b7bb-90a95f021520/3761643472.jpg

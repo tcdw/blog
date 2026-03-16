@@ -38,7 +38,7 @@ pubDate: "2017-07-03T07:17:01.000Z"
 
 终于顺利的刷好了港版固件，然后通过 Google Play 装好了所有的必需应用。这手机正式投入使用。
 
-![刚刚退役的 Galaxy S5 与 XZ Premium](https://assets.tcdww.cn/website/blog/post/2850ff3d-cb39-59ec-898c-40c3e968fff2/o_1bk4fg7hkdpqfq2al65193f9a.jpg)
+![刚刚退役的 Galaxy S5 与 XZ Premium](https://file.tcdw.net/blog/post/2850ff3d-cb39-59ec-898c-40c3e968fff2/o_1bk4fg7hkdpqfq2al65193f9a.jpg)
 
 至于它的拍照和音乐播放。。嗯，画质自然没得说。网上的样张已经很多了，这里就不会浪费诸位时间了。
 

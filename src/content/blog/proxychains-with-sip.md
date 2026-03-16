@@ -12,7 +12,7 @@ pubDate: "2017-09-24T12:39:39.000Z"
 
 你会被卡在这里：
 
-![被卡住](https://assets.tcdww.cn/website/blog/post/3e32c611-9950-5c4f-92ce-4524ff89f5ce/pcng-epic-fail.png)
+![被卡住](https://file.tcdw.net/blog/post/3e32c611-9950-5c4f-92ce-4524ff89f5ce/pcng-epic-fail.png)
 
 我们启用一个国外代理，运行**系统上已有的** curl（`/usr/bin/curl`），你猜怎么着？
 

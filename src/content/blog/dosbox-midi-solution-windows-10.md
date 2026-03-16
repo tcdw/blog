@@ -19,7 +19,7 @@ updatedDate: "2024-06-07T14:41:24.000Z"
   Windows 自带的那套 MIDI 波表太！难！听！了！所以需要换个好点的合成器和波表。GeneralUser GS 波表体积只有大约 30 MB，而且比较悦耳，一般使用足矣。
 - [Munt](https://sourceforge.net/projects/munt/)  
   MT-32 模拟器
-- MT-32 模拟器所需的 [两个 ROM 文件](https://img.tcdww.cn/2017/MT-32%20ROMs.7z)
+- MT-32 模拟器所需的 [两个 ROM 文件](https://file.tcdw.net/blog/misc/MT-32%20ROMs.7z)
 
 ## General MIDI
 
@@ -27,7 +27,7 @@ updatedDate: "2024-06-07T14:41:24.000Z"
 
 安装 VirtualMIDISynth，在桌面托盘右键，进入设置页面，添加你喜爱的波表文件。
 
-![波表文件配置](https://assets.tcdww.cn/website/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/vmidisynth.png)
+![波表文件配置](https://file.tcdw.net/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/vmidisynth.png)
 
 （图片是我从官网拿的，因为目前我只有一台 MacBook 可用
 
@@ -49,13 +49,13 @@ soundfont "GeneralUser GS v1.471.sf2"
 
 安装 Munt，然后打开程序，选择 Options -> ROM Configuration，载入刚才下载的两个 MT-32 ROM。
 
-![MT-32 ROM 加载](https://assets.tcdww.cn/website/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bj9anj0p171biav1khlcd32h5a.png)
+![MT-32 ROM 加载](https://file.tcdw.net/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bj9anj0p171biav1khlcd32h5a.png)
 
 ## DOSBox
 
 敲命令 `mixer /listmidi`，会看到这样的输出：
 
-![可用 MIDI 设备](https://assets.tcdww.cn/website/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bj97b6kjt1aoipii61bhu18s4a.png)
+![可用 MIDI 设备](https://file.tcdw.net/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bj97b6kjt1aoipii61bhu18s4a.png)
 
 正如你所见，我们现在有 M$ 的音源、MT-32 模拟器、TiMidity++ 可选，左侧是它们对应的 ID。
 
@@ -81,7 +81,7 @@ midiconfig=2
 
 不同游戏有不同的设置方法，但是很多都允许你设置音源。按照游戏提示操作即可。
 
-![配置](https://assets.tcdww.cn/website/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bjfdm03l1bn8rkgeg42l71i9va.png)
+![配置](https://file.tcdw.net/blog/post/4e36a618-fdd2-5662-9ab7-8d0e8bb0920a/o_1bjfdm03l1bn8rkgeg42l71i9va.png)
 
 然后你的 DOS 游戏就有了格外动听的音乐。
 

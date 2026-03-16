@@ -24,11 +24,11 @@ updatedDate: "2024-06-07T14:42:23.000Z"
 2008 年，tcdw 为 [杨静](https://www.nt-yangjing.com/) 翻唱的《雪人》做了一个 Flash MV。那是 tcdw 当时做过的最复杂的 Flash 了，不仅用到了很多 Flash 元件，还使用了 tcdw 学到的 ActionScript 实现了雪花特效以及一个很中二的『拖动光盘到标题文字即可开始播放』的功能（用到了 `hitTest` 这个 API）。做完以后，得到了父母的赞扬，还在小学的多媒体设备上，向全班同学放了一遍。**那是 tcdw 最信心满满的时刻之一了。**
 
 <div class="video-container"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" id="index">
-  <param name="movie" value="https://img.tcdww.cn/2018/snowman_yangjing.swf" />
+  <param name="movie" value="https://file.tcdw.net/blog/misc/snowman_yangjing.swf" />
   <param name="allowFullScreen" value="true" />
   <param name="quality" value="high" />
   <param name="wmode" value="opaque" />
-  <embed src="https://img.tcdww.cn/2018/snowman_yangjing.swf" name="index" allowFullScreen="true" quality="high" wmode="opaque" pluginspage="https://get.adobe.com/cn/flashplayer/" type="application/x-shockwave-flash"></embed>
+  <embed src="https://file.tcdw.net/blog/misc/snowman_yangjing.swf" name="index" allowFullScreen="true" quality="high" wmode="opaque" pluginspage="https://get.adobe.com/cn/flashplayer/" type="application/x-shockwave-flash"></embed>
 </object></div>
 
 ## 闪吧投稿

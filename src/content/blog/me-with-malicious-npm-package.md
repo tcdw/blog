@@ -38,7 +38,7 @@ updatedDate: "2025-04-24T07:15:59.000Z"
 
 我一脸问号，去看报错部分，直接懵了：WTF？
 
-![Rsbuild 构建不了恶意包](https://assets.tcdww.cn/website/blog/post/2025/rsbuild-error.png)
+![Rsbuild 构建不了恶意包](https://file.tcdw.net/blog/post/2025/rsbuild-error.png)
 
 就这样，我差点就酿成惨剧。
 

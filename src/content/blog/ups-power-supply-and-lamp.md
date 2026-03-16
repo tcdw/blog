@@ -19,15 +19,15 @@ pubDate: "2019-05-19T08:20:38.000Z"
 
 几天以后，UPS 到了。
 
-![UPS 的外包装](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0582_resized.jpg)
-![正面](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0583_resized.jpg)
-![背面](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0584_resized.jpg)
+![UPS 的外包装](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0582_resized.jpg)
+![正面](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0583_resized.jpg)
+![背面](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0584_resized.jpg)
 
 我选购的这款 UPS 可同时提供 USB、5V 和 9V / 12V 输出（可以通过开关切换 9V / 12V）；最大输出电流为 2A（所有端口总和）。
 
 同时，它使用 DC 输入，非常节约空间。
 
-![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0585_resized.jpg)
+![](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0585_resized.jpg)
 
 我把它接上了我的手机，让这部 UPS 为我的手机持续供电。效果还是不错的：我同时开着 Telegram SMS、代理软件和热点，也不用担心手机中途断电啦。
 
@@ -35,16 +35,16 @@ pubDate: "2019-05-19T08:20:38.000Z"
 
 不久以后，我们团队在一个省级比赛获得了一等奖，每个人都得到了这样的奖品：飞利浦台灯。
 
-![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/IMG_0676_resized.jpg)
-![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0611_resized.jpg)
+![](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/IMG_0676_resized.jpg)
+![](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0611_resized.jpg)
 
 因为这部台灯使用 12V 输入，功耗很低，我便把它接入了我的 UPS。这样，即使熄灯也可以使用啦。
 
-![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0614_resized.jpg)
+![](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0614_resized.jpg)
 
 ⇧ 旧的『宿舍神灯』。
 
-![](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0615_resized.jpg)
+![](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/DSC_0615_resized.jpg)
 
 ⇧ 新的飞利浦台灯。从我的实际感觉看，光线还是比那部『宿舍神灯』要舒服的，而且还有四档调光，非常灵活。
 
@@ -58,6 +58,6 @@ pubDate: "2019-05-19T08:20:38.000Z"
 
 于是这 UPS 的供电目标就只剩下那个台灯了。不过不知道未来还会发生什么…… 😅
 
-![phone spec](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_spec.jpg)
+![phone spec](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_spec.jpg)
 
-![phone status](https://assets.tcdww.cn/website/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_ststus.jpg)
+![phone status](https://file.tcdw.net/blog/post/a494d899-93f7-59d5-902d-299c88e72035/phone_ststus.jpg)

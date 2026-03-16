@@ -8,7 +8,7 @@ pubDate: "2020-01-10T11:02:42.000Z"
 
 我家的上传速率其实还是可以的，而随着我开始尝到**私有云**的甜头，我陆续增加了三块硬盘。然而因为它只有一个 USB 3.0 接口，所以最后我的家庭服务器变成了这个样子。
 
-![胶水 NAS](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/old_nuc.jpg)
+![胶水 NAS](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/old_nuc.jpg)
 
 看来，我需要一台真正的多盘位 NAS 服务器了。我一度考虑过以下方案：
 
@@ -36,11 +36,11 @@ pubDate: "2020-01-10T11:02:42.000Z"
 
 顺便那条品字电源线用的是**带接地的**美标插头，这使得它并不能在新国标的插线板上使用。所以如果你家没有多余的品字电源线，别忘了单独买一条！
 
-![Gen10 正面](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_2.jpg)
+![Gen10 正面](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_2.jpg)
 
-![Gen10 背面](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_3.jpg)
+![Gen10 背面](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_3.jpg)
 
-![Gen10 左侧](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_4.jpg)
+![Gen10 左侧](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_4.jpg)
 
 PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x1、大 4P x1 和小 4P（软驱电源插头）x1。
 
@@ -48,21 +48,21 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 1. 从硬盘仓顶部拧下来 4 颗螺丝
 2. 把这 4 颗螺丝拧到硬盘两侧最左面和最右面的孔位上  
-   ![硬盘上的螺丝](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_11.jpg)
+   ![硬盘上的螺丝](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_11.jpg)
 3. 把硬盘正面朝右，稍微用力的推进硬盘仓。移除硬盘也是超级容易的（见硬盘仓左下角贴纸）：  
-   ![硬盘仓（安装后）](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_12.jpg)
+   ![硬盘仓（安装后）](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_12.jpg)
 
 然后就开始安装系统 SSD 了。这玩意并没有 M.2 NVMe 插槽，但是在主板上提供了一个额外的 SATA 接口，所以我买了一块普通的 SATA SSD。
 
 然而，Gen10 的 PSU 并没有多余的电源线，你能利用的只有那个小 4P 插头。所以你需要买这样的转接线：
 
-![](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/Snipaste_2020-01-10_17-35-24.png)
+![](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/Snipaste_2020-01-10_17-35-24.png)
 
 我那个 Gamemax 机箱正好附送了一根这样的转接线，所以我就直接拿来用了。
 
 至于 SSD 的固定……Gen10 上侧的那几个空位是给你固定笔记本光驱用的，所以你的 SSD 大概就只能这样放着。当然你可以再买个笔记本光驱位转硬盘位之类的东西，不过 NAS 这种东西本身也不需要经常挪动，再说 SSD 里面并没有活动的部件，所以我就无所谓了。
 
-![系统 SSD（安装后）](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_14.jpg)
+![系统 SSD（安装后）](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_14.jpg)
 
 ## 系统
 
@@ -85,7 +85,7 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 嗯，我觉得目前就足够了。等将来有需求的话，再考虑加硬盘吧。
 
-![完工](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_15.jpg)
+![完工](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/gen10_15.jpg)
 
 ### 2024 更新
 
@@ -99,7 +99,7 @@ PSU 是台达的 flex 电源，宽电压，最大输出 200W；输出有 24pin x
 
 实测我的 CPU 负载一般可以控制在 1.0 以下；如果我真的需要算力，大概我就直接拿主力机器搞事了。
 
-![neofetch](https://assets.tcdww.cn/website/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/Snipaste_2020-01-12_00-09-16.png)
+![neofetch](https://file.tcdw.net/blog/post/7e2efde0-398c-58cb-8409-3467324f82c0/Snipaste_2020-01-12_00-09-16.png)
 
 ---
 

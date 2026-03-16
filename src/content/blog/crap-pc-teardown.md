@@ -16,55 +16,55 @@ pubDate: "2019-01-18T09:54:26.000Z"
 
 ## 做工廉价的机箱
 
-![机箱](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc.jpg)
+![机箱](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc.jpg)
 
 这个机箱从外面看还像是那么回事，但是轻飘飘的，而且金属部分甚至会划手。
 
 不过我丢掉了这个机箱才想起来忘了拍照了。
 
-![前面板](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-0.jpg)
+![前面板](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-0.jpg)
 
 做工粗糙，而且接线的地方是用热胶固定的……什么鬼……
 
 ## 机箱内部
 
-![机箱内部](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-8.jpg)
+![机箱内部](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-8.jpg)
 
 散发着寒意而且相当脏乱差的内部。
 
-![CPU](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-6.jpg)
+![CPU](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-6.jpg)
 
 安装在主板上的 CPU 和 768 MB DDR2 内存。CPU 与风扇之间的硅脂所剩无几的样子，不知道是当年给我爸装机的那 JS 敷衍了事，还是发生了什么黑魔法。
 
-![CPU 本体](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-4.jpg)
+![CPU 本体](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-4.jpg)
 
 [AMD Athlon 7750](<http://www.cpu-world.com/CPUs/K10/AMD-Athlon%20X2%207750%20Black%20Edition%20-%20AD775ZWCJ2BGH%20(AD775ZWCGHBOX).html>)。这台机器是 2010 年装的，但是据 `@qwe7002` 说，这片 CPU 在 2008 年就属于比较慢的了。
 
-![擦干净的主板](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-9.jpg)
+![擦干净的主板](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-9.jpg)
 
 擦干净的主板，是 ASUS [M2N68-AM PLUS](https://www.asus.com/Motherboards/M2N68AM_PLUS/)。也是低端板子呢。
 
-![光驱](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-5.jpg)
+![光驱](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-5.jpg)
 
 PHILIPS SPD2213，[据说是市场上最便宜的光驱。](http://www.cnetnews.com.cn/2008/0331/787901.shtml)
 
 ## 大炸弹
 
-![电源参数](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-1.jpg)
+![电源参数](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-1.jpg)
 
 嗯，来自惠州高级工厂的产物。这台机器的不稳定，一定程度上就是这个大炸弹搞得鬼了（包括 USB 供电不足的问题）。
 
 顺便这个序列号其实没什么卵用，[因为看起来他家所有产品都用这个序列号。](https://www.google.com/search?q=2009010907345093&tbm=isch)
 
-![电源内部](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-3.jpg)
+![电源内部](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-3.jpg)
 
-![电源内部](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-2.jpg)
+![电源内部](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc1-2.jpg)
 
-![电源内部](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc2-0.jpg)
+![电源内部](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc2-0.jpg)
 
 于是我把大炸弹的风扇拆了出来，发现了绿色的奇怪地方。那是做什么用的呢？
 
-![电源内部](https://assets.tcdww.cn/website/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc2-2.jpg)
+![电源内部](https://file.tcdw.net/blog/post/fd34f403-e21e-5d4d-b4ec-e75d0e0244f0/crappc2-2.jpg)
 
 原来特么是用来遮盖固定两组线缆的部分！看起来这玩意还是从奇怪的电子垃圾上迫真剪下来的风扇，然后这样凑合固定一下，就装到电源里面了。
 

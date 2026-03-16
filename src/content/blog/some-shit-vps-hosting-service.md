@@ -12,9 +12,9 @@ tcdw 脑子一热，相信了这个看起来就很离谱的东西。
 
 2015 年 10 月，我在某人的 QQ 群里看见有人提及这款廉价 VPS，便果断注册帐号，并上去看了下，发现价格诱人爆了。
 
-![虚拟 CPU](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/2299721000.png)
-![RAM](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/2680619006.png)
-![“SSD”](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/1515559297.png)
+![虚拟 CPU](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/2299721000.png)
+![RAM](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/2680619006.png)
+![“SSD”](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/1515559297.png)
 
 这低价，恰好我的 Conoha VPS 就要到期了，于是我便头脑一热，用 Paypal 交了 8 USD，买下了一年的 1 核、1 GB RAM、10 GB SSD 配置套餐，然后开了一个他们的 CloudPro 机器。
 
@@ -36,17 +36,17 @@ tcdw 脑子一热，相信了这个看起来就很离谱的东西。
 
 ### df -h
 
-![执行结果](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/3321872264.png)
+![执行结果](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/3321872264.png)
 
 尽管这里并没有什么缩水，但是硬盘 io 果然如我后来所料：**真心不咋的！**
 
 我再执行`dd if=/dev/zero of=test.bin bs=100MB count=1`，得到结果：
 
-![执行结果](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/1069170927.png)
+![执行结果](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/1069170927.png)
 
 ### dmidecode -q
 
-![执行结果](https://assets.tcdww.cn/website/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/387850477.png)
+![执行结果](https://file.tcdw.net/blog/post/0fe683ec-481c-56b8-b971-c490092b6acd/387850477.png)
 
 天真的 tcdw 还以为会是至强处理器呢，结果居然是这样。
 

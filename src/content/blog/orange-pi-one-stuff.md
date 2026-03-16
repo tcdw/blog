@@ -14,4 +14,4 @@ pubDate: "2016-12-21T18:22:15.000Z"
 7. 香橙派的 [官方文档](http://www.orangepi.cn/Docs/Docscn/mainpage.html) 各种不完全，还有一堆页面干脆是空白的；支持论坛和 QQ 群也是各种一头雾水。如果你并没有一定的知识储备，还是老老实实买树莓派吧，至少它的文档齐全、社区成熟
 8. 扯淡完毕，因为我不是菊苣
 
-![debian8_linux4.png](https://assets.tcdww.cn/website/blog/post/c334e46d-2ee0-5275-aae9-774e4937504d/585aaf4f35460.png)
+![debian8_linux4.png](https://file.tcdw.net/blog/post/c334e46d-2ee0-5275-aae9-774e4937504d/585aaf4f35460.png)

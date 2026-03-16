@@ -47,23 +47,23 @@ diskutil apfs resizeContainer disk1 200GB    # 200GB 指你给 macOS 留的分�
 
 下载好 Windows 10 ISO，插上你的 U 盘，然后先格式化一下：
 
-![格式化 U 盘](https://assets.tcdww.cn/website/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/format_usb_drive.png)
+![格式化 U 盘](https://file.tcdw.net/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/format_usb_drive.png)
 
 我们把 **格式** 设置为 **MS-DOS (FAT)**，**方案** 设置为 **主引导记录**。
 
 然后我们打开 **UNetbootin**，选择 **Diskimage**，打开我们准备好的 Windows 10 ISO。下面的 **Type** 当然选择 **USB Drive**，然后将 **Drive** 设置成你要制作安装盘的 U 盘（如果不确定的话，可以把主机上所有其它 U 盘和读卡器什么的都拔掉，这样就只有一个选项了）。
 
-![UNetbootin](https://assets.tcdww.cn/website/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/make_disk.png)
+![UNetbootin](https://file.tcdw.net/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/make_disk.png)
 
 然后点击 `OK`，耐心等待写入完毕就是了。
 
-![写入过程](https://assets.tcdww.cn/website/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/make_disk_progress.png)
+![写入过程](https://file.tcdw.net/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/make_disk_progress.png)
 
 在写入完毕后，我们打开 **启动转换助理**，选择 **操作** => **下载 Windows 支持软件**，并将保存位置设为我们的安装盘的根目录下。接下来我们会需要的。
 
 下载即将结束时会向你请求权限，这是正常的，直接输入密码确认就行了。
 
-![下载 Windows 支持软件](https://assets.tcdww.cn/website/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/windows_support_dl.png)
+![下载 Windows 支持软件](https://file.tcdw.net/blog/post/4ad94ead-a6cb-5253-9c68-0bb3e12336a2/windows_support_dl.png)
 
 ## 如果你尝试过 Boot Camp 安装
 

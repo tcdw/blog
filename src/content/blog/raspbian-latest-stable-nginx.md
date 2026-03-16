@@ -83,7 +83,7 @@ sudo dpkg -i nginx_1.16.1-1~buster_armhf.deb
 
 大功告成！
 
-![nginx -V 的输出](https://assets.tcdww.cn/website/blog/post/bf29fba0-fcb9-5658-af98-c99c9075a99e/Snipaste_2019-11-05_11-01-58.png)
+![nginx -V 的输出](https://file.tcdw.net/blog/post/bf29fba0-fcb9-5658-af98-c99c9075a99e/Snipaste_2019-11-05_11-01-58.png)
 
 ## 升级新版本
 

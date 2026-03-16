@@ -14,7 +14,7 @@ tcdw 准备干掉这些凉皮，便把塑料袋打开，把凉皮倒进了饭盒
 
 为了把辣椒油倒出来，tcdw 拿出剪刀，把塑料袋剪开了一个口，但没想到口剪得太大了，里面的辣椒油洒到了 tcdw 的桌子上。
 
-![辣椒油](https://assets.tcdww.cn/website/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/hot-flood.jpg)
+![辣椒油](https://file.tcdw.net/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/hot-flood.jpg)
 
 tcdw 很慌张，他的手机被洒了，抽屉里的东西也被洒了。他慌里慌张的拿出纸巾、洗洁精和抹布，努力进行清理。
 
@@ -30,7 +30,7 @@ tcdw 的 XZ Premium 上全是辣椒油，为了清理的更干净一些，**他�
 
 晚上，tcdw 绝望的发现，他的 XZ Premium 出现了奇怪的亮斑。
 
-![奇怪的亮斑](https://assets.tcdww.cn/website/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/terrible-screen.jpg)
+![奇怪的亮斑](https://file.tcdw.net/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/terrible-screen.jpg)
 
 tcdw 瑟瑟发抖，赶紧跟 Telegram 群里的大佬们讨论，最后得出结论，**大概是防水盖没弄好，或者防水胶出问题了。**
 
@@ -50,6 +50,6 @@ tcdw 终于把上个月买的 XZ Premium 贴膜和保护套用上了。但是这
 
 总之手机最后修好了，还是可喜可贺的。
 
-![修好的手机](https://assets.tcdww.cn/website/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/repaired_2.jpg)
+![修好的手机](https://file.tcdw.net/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/repaired_2.jpg)
 
-![修好的手机](https://assets.tcdww.cn/website/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/repaired_4.jpg)
+![修好的手机](https://file.tcdw.net/blog/post/c01def9b-4809-5bfa-9000-b1feeeb8390f/repaired_4.jpg)

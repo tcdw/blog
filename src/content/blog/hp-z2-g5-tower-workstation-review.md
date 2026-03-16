@@ -26,7 +26,7 @@ pubDate: "2021-03-02T11:44:19.000Z"
 
 因为卖家发的是顺丰，所以我下单以后第三天就到了。毕竟在内蒙古这种地方，这个速度已经算是很快了。
 
-![包装](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-1.jpg)
+![包装](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-1.jpg)
 
 机箱的颜值确实不错，不过感觉比想象中的要略小一点。
 
@@ -44,21 +44,21 @@ pubDate: "2021-03-02T11:44:19.000Z"
   - 1 个 VGA (Flex IO modules)
 
 <div class="hpws-grid-container">
-<img alt="机箱前面" src="https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-3.jpg">
-<img alt="机箱后面" src="https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-4.jpg">
+<img alt="机箱前面" src="https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-3.jpg">
+<img alt="机箱后面" src="https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-4.jpg">
 </div>
 
 打开机箱也非常简单，只要扳动背面右侧的黑色开关即可。
 
-![初见机箱内部](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-5a.jpg)
+![初见机箱内部](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-5a.jpg)
 
 后盖上粘贴的贴纸介绍了主板各个部位的用途。
 
-![后盖贴纸](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-service.jpg)
+![后盖贴纸](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-service.jpg)
 
 中间那个横着的玩意是……显卡风扇。应该是辅助散热的，不过也给我后面的显卡安装带来了一些麻烦（见后文）。
 
-![显卡散热器](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-6.jpg)
+![显卡散热器](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-6.jpg)
 
 工作站的主板。这块主板的可扩充性的确非常丰富，主要亮点有：
 
@@ -69,15 +69,15 @@ pubDate: "2021-03-02T11:44:19.000Z"
 
 顺便主板是前后一体贯通的，而且是非标准螺丝孔位，所以是没法更换市售主板的。不过对我来说无所谓啦。
 
-![主板](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-7.jpg)
+![主板](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-7.jpg)
 
 传说中的 Flex IO modules；我这台配的是 VGA 输出。
 
-![Flex IO modules](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8a.jpg)
+![Flex IO modules](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8a.jpg)
 
 预装的 AX201 网卡，支持 Wi-Fi 6 和蓝牙 5.0。
 
-![AX201 网卡](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8b.jpg)
+![AX201 网卡](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8b.jpg)
 
 主板的 PCI-E 插槽，配置如下：
 
@@ -85,13 +85,13 @@ pubDate: "2021-03-02T11:44:19.000Z"
 - 2 个 PCI-E x4（x1 信号）
 - 1 个 PCI-E x16（x4 信号）
 
-![PCI-E 插槽](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8c.jpg)
+![PCI-E 插槽](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-8c.jpg)
 
 ## 其它配件
 
 我的附带了一个笔记本尺寸的 DVD-RW 驱动器，不过还预留了一个空的 5.25 寸扩展槽。
 
-![DVD-RW 驱动器](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-dvd-spec.jpg)
+![DVD-RW 驱动器](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-dvd-spec.jpg)
 
 700W 的电源适配器，**有着 80 Plus 铂金认证。**预留了两条 6+2 的显卡供电。
 
@@ -99,30 +99,30 @@ pubDate: "2021-03-02T11:44:19.000Z"
 
 Edit: 有 Telegram 群友指出这个电源适配器应该是符合 ATX12VO 标准的。电源参数看起来确实如此，但是实际上孔位和尺寸跟正常的 ATX 电源完全对不上，而且电源接口也是非标准的。
 
-![电源适配器](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-psu-spec.jpg)
+![电源适配器](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-psu-spec.jpg)
 
 三星 8G DDR4 2666 内存。
 
-![内存](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-11.jpg)
+![内存](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-11.jpg)
 
 东芝 DT01ACA200 机械硬盘（2TB / CMR）；拆下来以后被我塞进 NAS 里了。
 
-![机械硬盘](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-12.jpg)
+![机械硬盘](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-12.jpg)
 
 硬盘托架；这台机器可以安装两块 3.5 寸硬盘。
 
-![硬盘托架](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-13.jpg)
+![硬盘托架](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-13.jpg)
 
 ## 其它附带的东西
 
 包装中除了主机本体，还有小册子、品字电源线、键盘和鼠标。
 
-![其它物品](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14a.jpg)
+![其它物品](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14a.jpg)
 
 附带的键盘和鼠标；朴实无华，但是手感还算说得过去。
 
-![鼠标](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14b.jpg)
-![键盘](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14c.jpg)
+![鼠标](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14b.jpg)
+![键盘](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-14c.jpg)
 
 ## 安装我自己的配件
 
@@ -134,7 +134,7 @@ Edit: 有 Telegram 群友指出这个电源适配器应该是符合 ATX12VO 标�
 
 但是安装显卡时，我发现我扣不上机箱的显卡散热器。仔细一看，发现了问题所在：我的显卡的供电口位置很尴尬，恰好和散热器冲突。
 
-![显卡散热器问题](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-15.jpg)
+![显卡散热器问题](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-15.jpg)
 
 所以，我只好先把固定散热器（？）的那个黑色的东西拆下来了，然后才有了足够的空间。拆下来以后看起来问题不大，机箱的显卡散热器还能固定住的样子。
 
@@ -148,9 +148,9 @@ Edit: 有 Telegram 群友指出这个电源适配器应该是符合 ATX12VO 标�
 
 得益于 24G 的内存、8 核 16 线程的处理器和 Hyper-V，整体的体验是滑溜溜的，开 3 个 Windows 虚拟机都压力不大。
 
-![hwinfo 信息](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-info.png)
+![hwinfo 信息](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-info.png)
 
-![CPU](https://assets.tcdww.cn/website/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-cpu.png)
+![CPU](https://file.tcdw.net/blog/post/8f57e29b-2a8a-58b0-b56a-a3f91f8acdbb/hpws-cpu.png)
 
 2021 年 4 月更新：因为发现 500G 的存储空间有点捉襟见肘，再加上 Chia 挖矿潮即将兴起，所以提前把固态硬盘换成了**建兴 T10** 240GB + **铠侠 RC10** 1TB 的组合。很爽。
 

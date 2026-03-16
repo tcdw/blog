@@ -24,6 +24,6 @@ qwe7002 带着我和 Librazy 瞎转，去了各种~~未必能去的~~景点。�
 
 我们后会有期！
 
-![好耶，是 qwe 和老赖](https://assets.tcdww.cn/website/blog/post/f36f35c9-0599-59ca-b34b-e3778daab5b3/3guy.jpg)
+![好耶，是 qwe 和老赖](https://file.tcdw.net/blog/post/f36f35c9-0599-59ca-b34b-e3778daab5b3/3guy.jpg)
 
 <iframe allow="autoplay *; encrypted-media *;" style="width:100%;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/past-present-feat-seira-kariya/1121997633?i=1121998300&app=music" height="150" frameborder="0"></iframe>
