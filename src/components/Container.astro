@@ -1,15 +1,18 @@
 ---
+import BackdropBlock from "./BackdropBlock.astro";
+
 interface Props {
-    defaultPadding: boolean
+  defaultPadding: boolean;
+  backdrop?: boolean;
 }
 
-const { defaultPadding } = Astro.props;
+const { defaultPadding, backdrop = true } = Astro.props;
 ---
 
 <div class="flex justify-center -mt-32 relative md:px-4 xl:px-0 xl:gap-4">
-    <!-- bg-white/70 dark:bg-gray-950/70 koi-squircle-md backdrop-blur-xl -->
-    <main class={`w-full max-w-4xl relative z-10 ${defaultPadding ? "p-5 md:p-6" : ""}`}>
-        <slot></slot>
-    </main>
-    <div class="w-full max-w-4xl h-64 absolute bg-white/80 dark:bg-gray-950/70 koi-squircle-md backdrop-blur-xl" aria-hidden="true"></div>
+  <!-- bg-white/70 dark:bg-gray-950/70 koi-squircle-md backdrop-blur-xl -->
+  <main class={`w-full max-w-4xl relative z-10 ${defaultPadding ? "p-5 md:p-6" : ""}`}>
+    <slot />
+  </main>
+  {backdrop && <BackdropBlock class="w-full max-w-4xl h-64 absolute" aria-hidden="true" />}
 </div>
