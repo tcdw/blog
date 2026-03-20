@@ -7,6 +7,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/Container.astro";
 import { Image } from "astro:assets";
 import BackdropBlock from "@/components/BackdropBlock.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
 ---
 
 <BaseLayout>
@@ -14,24 +15,25 @@ import BackdropBlock from "@/components/BackdropBlock.astro";
   <Header hasTitle={false} />
   <Container defaultPadding={true} backdrop={false}>
     <div class="grid grid-cols-2">
-      <BackdropBlock>
-        <div>
-          <Image src={SITE_AUTHOR_AVATAR} width={128} densities={[1, 2, 3]} alt={"Avatar"} />
-          <h2>tcdw</h2>
+      <BackdropBlock class={"p-8 space-y-4"}>
+        <div class="space-y-6">
+          <Image
+            src={SITE_AUTHOR_AVATAR}
+            width={128}
+            densities={[1, 2, 3]}
+            alt={"Avatar"}
+            class={"rounded-full shadow-xl ring-4 ring-white"}
+          />
+          <h2 class="text-2xl font-bold">tcdw</h2>
+        </div>
+        <div class="space-y-1 opacity-70">
           <p>小透明前端（Web/移动端）开发者，是 React Native （Expo） 用户。</p>
           <p>在北京当社畜。</p>
           <p>喜欢观察城市、喜欢工业之美。</p>
           <p>是普通人。</p>
           <p>希望与你交朋友！</p>
         </div>
-        <!-- icon -->
-        <ul class="flex">
-          <li><a href="https://github.com/tcdw">GitHub</a></li>
-          <li><a href="https://x.com/tcdwww">X (Twitter)</a></li>
-          <li><a href="https://youtube.com/@tcdwww">YouTube</a></li>
-          <li><a href="https://bsky.app/profile/tcdw.net">Bluesky</a></li>
-          <li><a href="/blog/">Blog</a></li>
-        </ul>
+        <SocialLinks />
       </BackdropBlock>
       <div>
         <h2>技术栈</h2>
