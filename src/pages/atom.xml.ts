@@ -32,10 +32,10 @@ export async function GET(context: APIContext) {
   for (const post of posts) {
     feed.addItem({
       title: post.data.title,
-      id: new URL(`/blog/${post.slug}/`, siteUrl).toString(),
-      link: new URL(`/blog/${post.slug}/`, siteUrl).toString(),
+      id: new URL(`/blog/${post.id}/`, siteUrl).toString(),
+      link: new URL(`/blog/${post.id}/`, siteUrl).toString(),
       description: post.data.description,
-      content: await marked.parse(post.body),
+      content: await marked.parse(post.body ?? ""),
       author: [
         {
           name: SITE_AUTHOR_NAME,
