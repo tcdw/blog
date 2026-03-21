@@ -37,7 +37,7 @@ const heightClassName = hasLargeBanner ? "h-[calc(100svh+8rem)]" : "h-[calc(65lv
 </HeaderNav>
 
 <!-- 页面头部 -->
-<header id="navBackground" class={`${heightClassName} min-h-120 flex flex-col z-0`}>
+<header id="navBackground" class={`${heightClassName} min-h-128 flex flex-col z-0`}>
   <!-- 页面头图本体（明亮主题） -->
   <div class="flex-auto relative">
     {
@@ -68,14 +68,14 @@ const heightClassName = hasLargeBanner ? "h-[calc(100svh+8rem)]" : "h-[calc(65lv
 </header>
 
 <!-- 页面头图 -->
-<div class={`w-full ${heightClassName} min-h-120 absolute left-0 top-0 -z-20`} aria-hidden="true">
+<div class={`w-full ${heightClassName} min-h-128 absolute left-0 top-0 -z-20`} aria-hidden="true">
   <Image
     src={SITE_HEAD_IMAGE_DAY}
     widths={[...presetSizes, SITE_HEAD_IMAGE_DAY.width]}
     sizes={`${imageSizes}${SITE_HEAD_IMAGE_DAY.width}px`}
     quality={90}
     alt="网站横幅图片"
-    class={`block dark:hidden w-full h-full ${heightClassName} object-center object-cover`}
+    class={`block dark:hidden w-full h-full ${heightClassName} object-bottom object-cover`}
   />
   <!-- 页面头图本体（暗黑主题） -->
   <Image
@@ -84,6 +84,6 @@ const heightClassName = hasLargeBanner ? "h-[calc(100svh+8rem)]" : "h-[calc(65lv
     sizes={`${imageSizes}${SITE_HEAD_IMAGE_NIGHT.width}px`}
     quality={90}
     alt="网站横幅图片"
-    class={`hidden dark:block w-full h-full ${heightClassName} object-center object-cover`}
+    class={`hidden dark:block w-full h-full ${heightClassName} object-bottom object-cover`}
   />
 </div>
