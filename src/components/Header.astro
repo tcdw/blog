@@ -75,7 +75,7 @@ const heightClassName = hasLargeBanner ? "h-[calc(100svh+8rem)]" : "h-[calc(65lv
     sizes={`${imageSizes}${SITE_HEAD_IMAGE_DAY.width}px`}
     quality={90}
     alt="网站横幅图片"
-    class={`block dark:hidden w-full h-full ${heightClassName} object-bottom object-cover`}
+    class={`block dark:hidden w-full h-full ${heightClassName} object-center object-cover`}
   />
   <!-- 页面头图本体（暗黑主题） -->
   <Image
@@ -84,6 +84,6 @@ const heightClassName = hasLargeBanner ? "h-[calc(100svh+8rem)]" : "h-[calc(65lv
     sizes={`${imageSizes}${SITE_HEAD_IMAGE_NIGHT.width}px`}
     quality={90}
     alt="网站横幅图片"
-    class={`hidden dark:block w-full h-full ${heightClassName} object-bottom object-cover`}
+    class={`hidden dark:block w-full h-full ${heightClassName} object-center object-cover`}
   />
 </div>

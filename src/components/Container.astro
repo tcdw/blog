@@ -1,18 +1,22 @@
 ---
 import BackdropBlock from "./BackdropBlock.astro";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   defaultPadding: boolean;
   backdrop?: boolean;
+  class?: string;
+  mainClass?: string;
+  backdropClass?: string;
 }
 
-const { defaultPadding, backdrop = true } = Astro.props;
+const { defaultPadding, backdrop = true, class: className, mainClass, backdropClass } = Astro.props;
 ---
 
-<div class="flex justify-center -mt-32 relative md:px-4 xl:px-0 xl:gap-4">
+<div class={twMerge("flex justify-center -mt-32 relative md:px-4 xl:px-0 xl:gap-4", className)}>
   <!-- bg-white/70 dark:bg-gray-950/70 koi-squircle-md backdrop-blur-xl -->
-  <main class={`w-full max-w-4xl relative z-10 ${defaultPadding ? "p-5 md:p-6" : ""}`}>
+  <main class={twMerge("w-full max-w-4xl relative z-10", defaultPadding ? "p-5 md:p-6" : "", mainClass)}>
     <slot />
   </main>
-  {backdrop && <BackdropBlock class="w-full max-w-4xl h-64 absolute" aria-hidden="true" />}
+  {backdrop && <BackdropBlock class={twMerge("w-full max-w-4xl h-64 absolute", backdropClass)} aria-hidden="true" />}
 </div>
