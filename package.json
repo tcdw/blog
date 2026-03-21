@@ -20,17 +20,16 @@
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/svelte": "^8.0.3",
     "@tailwindcss/typography": "^0.5.19",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^6.0.7",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.0.8",
     "feed": "^5.2.0",
     "markdown-to-text": "^0.1.1",
-    "marked": "^17.0.4",
-    "prettier": "^3.7.4",
+    "marked": "^17.0.5",
+    "prettier": "^3.8.1",
     "sharp": "^0.34.5",
-    "svelte": "^5.46.0",
-    "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18",
+    "svelte": "^5.54.1",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
-  },
-  "packageManager": "pnpm@10.25.0"
+  }
 }
