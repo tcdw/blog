@@ -8,13 +8,14 @@ import Container from "../components/Container.astro";
 import { Image } from "astro:assets";
 import BackdropBlock from "@/components/BackdropBlock.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
+import placeholderImage from "@/assets/placeholder.webp";
 ---
 
 <BaseLayout>
   <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <Header hasTitle={false} />
   <Container defaultPadding={false} backdrop={false} mainClass="max-w-5xl">
-    <div class="grid grid-cols-2 text-black dark:text-white">
+    <div class="grid grid-cols-2 text-black dark:text-white gap-8">
       <BackdropBlock class={"p-8 space-y-4"}>
         <div class="space-y-6">
           <Image
@@ -35,10 +36,14 @@ import SocialLinks from "@/components/SocialLinks.astro";
         </div>
         <SocialLinks />
       </BackdropBlock>
-      <div>
-        <h2>技术栈</h2>
-        <p>TypeScript, Go, React, Tailwind CSS, Astro, Next.js...</p>
-      </div>
+      <BackdropBlock class={"p-4"}>
+        <Image
+          src={placeholderImage}
+          alt={"placeholder image"}
+          class={"aspect-4/3 object-cover"}
+          style={"border-radius: 1rem; corner-shape: squircle;"}
+        />
+      </BackdropBlock>
     </div>
   </Container>
   <Footer />
