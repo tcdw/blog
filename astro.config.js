@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import svelte from "@astrojs/svelte";
+import solid from "@astrojs/solid-js";
 import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
@@ -15,7 +15,7 @@ export default defineConfig({
   // 在根路径下（例如 `https://example.com/`）则填写 `/`
   base: process.env.NODE_ENV === "production" ? "/blog/" : "",
 
-  integrations: [mdx(), sitemap(), svelte(), icon()],
+  integrations: [mdx(), sitemap(), solid(), icon()],
 
   markdown: {
     remarkRehype: {

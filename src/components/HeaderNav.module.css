@@ -1,0 +1,39 @@
+.bar1Step1 {
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+.bar1Step2 {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bar1Step3 {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.3);
+  height: 0.2rem;
+}
+
+.bar2Step1 {
+  display: block;
+}
+
+.bar2Step2 {
+  display: none;
+}
+
+.bar3Step1 {
+  bottom: 0;
+  transform: translate(-50%, 0);
+}
+
+.bar3Step2 {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.bar3Step3 {
+  bottom: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg) scale(1.3);
+  height: 0.2rem;
+}

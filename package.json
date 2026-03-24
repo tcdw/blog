@@ -18,7 +18,7 @@
     "@astrojs/mdx": "^5.0.2",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
-    "@astrojs/svelte": "^8.0.3",
+    "@astrojs/solid-js": "^6.0.1",
     "@iconify-json/ri": "^1.2.10",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
@@ -29,7 +29,7 @@
     "marked": "^17.0.5",
     "prettier": "^3.8.1",
     "sharp": "^0.34.5",
-    "svelte": "^5.54.1",
+    "solid-js": "^1.9.11",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
