@@ -32,7 +32,7 @@ export default function FactCard(props: Props) {
   function handleDice() {
     setFading(true);
     setTimeout(() => {
-      setIndex((prev) => getRandomIndex(props.facts.length, prev));
+      setIndex(prev => getRandomIndex(props.facts.length, prev));
       setFading(false);
     }, 200);
   }
@@ -50,10 +50,7 @@ export default function FactCard(props: Props) {
           {props.children}
         </button>
       </div>
-      <div
-        class="transition-opacity duration-200"
-        style={{ opacity: fading() ? "0" : "1" }}
-      >
+      <div class="transition-opacity duration-200" style={{ opacity: fading() ? "0" : "1" }}>
         <div class="relative overflow-hidden rounded-xl bg-white dark:bg-black mt-3">
           <img
             src={fact().src}
@@ -61,7 +58,7 @@ export default function FactCard(props: Props) {
             width={fact().width}
             height={fact().height}
             alt={fact().alt}
-            class="aspect-3/2 object-cover filter grayscale opacity-80 w-full"
+            class="aspect-3/2 object-cover filter grayscale opacity-70 w-full transition duration-300 hover:grayscale-0 hover:opacity-100"
             loading="lazy"
           />
         </div>
