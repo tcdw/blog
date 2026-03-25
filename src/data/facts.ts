@@ -3,6 +3,7 @@ import hobbyCity from "@/assets/hobbies/hobby_city.jpg";
 import hobbyCafeSearch from "@/assets/hobbies/hobby_cafe_search.jpg";
 import hobbyAbstract from "@/assets/hobbies/hobby_abstract.jpg";
 import hobbyGoods from "@/assets/hobbies/hobby_goods.jpg";
+import hobbyHomelab from "@/assets/hobbies/hobby_homelab.jpg";
 import favoriteNayukiTea from "@/assets/hobbies/favorite_nayuki_tea.jpg";
 
 export interface Fact {
@@ -36,6 +37,11 @@ export const FACTS: Fact[] = [
     image: hobbyGoods,
     alt: "收藏品",
     text: "tcdw 喜欢收集各种谷子（小物件），尤其是《蔚蓝档案》的同人谷。",
+  },
+  {
+    image: hobbyHomelab,
+    alt: "Homelab",
+    text: "tcdw 是 Homelab 玩家，搞了一堆由商用台式机 Cosplay 的服务器在家里。",
   },
   {
     image: favoriteNayukiTea,
