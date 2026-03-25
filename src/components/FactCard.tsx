@@ -14,25 +14,35 @@ interface Props {
   children?: JSX.Element;
 }
 
-function getRandomIndex(length: number, exclude?: number): number {
-  if (length <= 1) return 0;
-  let next: number;
-  do {
-    next = Math.floor(Math.random() * length);
-  } while (next === exclude);
-  return next;
+function createPlaylist(length: number): number[] {
+  const playlist = Array.from({ length }, (_, index) => index);
+
+  for (let index = playlist.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [playlist[index], playlist[swapIndex]] = [playlist[swapIndex], playlist[index]];
+  }
+
+  return playlist;
 }
 
 export default function FactCard(props: Props) {
-  const [index, setIndex] = createSignal(getRandomIndex(props.facts.length));
+  const [playlist, setPlaylist] = createSignal(createPlaylist(props.facts.length));
+  const [index, setIndex] = createSignal(0);
   const [fading, setFading] = createSignal(false);
 
-  const fact = createMemo(() => props.facts[index()]);
+  const fact = createMemo(() => props.facts[playlist()[index()] ?? 0]);
 
   function handleDice() {
     setFading(true);
     setTimeout(() => {
-      setIndex(prev => getRandomIndex(props.facts.length, prev));
+      setIndex(prev => {
+        const nextIndex = prev + 1;
+
+        if (nextIndex < playlist().length) return nextIndex;
+
+        setPlaylist(createPlaylist(props.facts.length));
+        return 0;
+      });
       setFading(false);
     }, 200);
   }
