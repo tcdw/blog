@@ -1,38 +1,14 @@
 import { Show, createMemo, createSignal, onCleanup, onMount, type JSX } from "solid-js";
-
-export interface ProcessedFact {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-  text: string;
-  srcSet?: string;
-}
+import { createInitialPlaylist, createPlaylist } from "./fact-card-helpers";
+import { fadeDuration, initialRevealDelay } from "./fact-card.const";
+import type { ProcessedFact } from "./types";
 
 interface Props {
   facts: ProcessedFact[];
   children?: JSX.Element;
 }
 
-const INITIAL_REVEAL_DELAY = 500;
-const FADE_DURATION = 200;
-
-function createInitialPlaylist(length: number): number[] {
-  return Array.from({ length }, (_, index) => index);
-}
-
-function createPlaylist(length: number): number[] {
-  const playlist = Array.from({ length }, (_, index) => index);
-
-  for (let index = playlist.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [playlist[index], playlist[swapIndex]] = [playlist[swapIndex], playlist[index]];
-  }
-
-  return playlist;
-}
-
-export default function FactCard(props: Props) {
+export function FactCard(props: Props) {
   const [playlist, setPlaylist] = createSignal(createInitialPlaylist(props.facts.length));
   const [index, setIndex] = createSignal(0);
   const [fading, setFading] = createSignal(false);
@@ -57,8 +33,8 @@ export default function FactCard(props: Props) {
         setIndex(0);
         setReady(true);
         setFading(false);
-      }, FADE_DURATION);
-    }, INITIAL_REVEAL_DELAY);
+      }, fadeDuration);
+    }, initialRevealDelay);
   });
 
   onCleanup(() => {
@@ -80,7 +56,7 @@ export default function FactCard(props: Props) {
         return 0;
       });
       setFading(false);
-    }, FADE_DURATION);
+    }, fadeDuration);
   }
 
   return (

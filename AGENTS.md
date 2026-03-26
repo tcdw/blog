@@ -37,7 +37,7 @@
 ## 技术栈
 
 - Astro 5（静态站点）
-- React（Astro Islands）
+- SolidJS（Astro Islands）
 - Tailwind CSS v4
 - TypeScript
 - 使用 Bun
@@ -48,6 +48,17 @@
 - `bun dev`
 - `bun build`
 - `bun preview`
+
+## SolidJS 部分的 File Naming
+
+| Type       | Pattern           |
+| ---------- | ----------------- |
+| Components | `*.component.tsx` |
+| Styled     | `*.styled.tsx`    |
+| Helpers    | `*-helpers.ts`    |
+| Types      | `types.ts`        |
+| Hooks      | `use-*.ts`        |
+| Constants  | `*.const.ts`      |
 
 ## 脚本编写
 

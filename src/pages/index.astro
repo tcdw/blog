@@ -9,12 +9,12 @@ import { Image, getImage } from "astro:assets";
 import BackdropBlock from "@/components/BackdropBlock.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
-import FactCard from "@/components/FactCard.tsx";
+import { FactCard } from "@/components/fact-card/fact-card.component";
 import { FACTS } from "@/data/facts";
-import type { ProcessedFact } from "@/components/FactCard.tsx";
+import type { ProcessedFact } from "@/components/fact-card/types";
 
 const processedFacts: ProcessedFact[] = await Promise.all(
-  FACTS.map(async (fact) => {
+  FACTS.map(async fact => {
     const img = await getImage({
       src: fact.image,
       width: 480,
@@ -28,7 +28,7 @@ const processedFacts: ProcessedFact[] = await Promise.all(
       text: fact.text,
       srcSet: img.srcSet?.attribute,
     };
-  })
+  }),
 );
 ---
 
