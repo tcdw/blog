@@ -1,10 +1,10 @@
-import hobbyMusic from "@/assets/hobbies/hobby_music.jpg";
-import hobbyCity from "@/assets/hobbies/hobby_city.jpg";
-import hobbyCafeSearch from "@/assets/hobbies/hobby_cafe_search.jpg";
-import hobbyAbstract from "@/assets/hobbies/hobby_abstract.jpg";
-import hobbyGoods from "@/assets/hobbies/hobby_goods.jpg";
-import hobbyHomelab from "@/assets/hobbies/hobby_homelab.jpg";
-import favoriteNayukiTea from "@/assets/hobbies/favorite_nayuki_tea.jpg";
+import hobbyMusic from "@/assets/facts/hobby_music.jpg";
+import hobbyCity from "@/assets/facts/hobby_city.jpg";
+import hobbyCafeSearch from "@/assets/facts/hobby_cafe_search.jpg";
+import hobbyAbstract from "@/assets/facts/hobby_abstract.jpg";
+import hobbyGoods from "@/assets/facts/hobby_goods.jpg";
+import hobbyHomelab from "@/assets/facts/hobby_homelab.jpg";
+import favoriteNayukiTea from "@/assets/facts/favorite_nayuki_tea.jpg";
 
 export interface Fact {
   image: ImageMetadata;
