@@ -18,9 +18,8 @@ export function FactCard(props: Props) {
   let revealTimer: ReturnType<typeof setTimeout> | undefined;
   let fadeTimer: ReturnType<typeof setTimeout> | undefined;
 
-  const hasFacts = createMemo(() => props.facts.length > 0);
   const fact = createMemo<ProcessedFact | null>(() => props.facts[playlist()[index()] ?? 0] ?? null);
-  const busy = createMemo(() => hasFacts() && (!ready() || !imageLoaded()));
+  const busy = createMemo(() => !ready() || !imageLoaded());
 
   createEffect(
     on(
@@ -28,16 +27,12 @@ export function FactCard(props: Props) {
       source => {
         if (!source) return;
         setImageLoaded(false);
-      }
-    )
+      },
+    ),
   );
 
   onMount(() => {
-    if (!hasFacts()) {
-      setReady(true);
-      return;
-    }
-
+    setReady(true);
     revealTimer = setTimeout(() => {
       setFading(true);
       fadeTimer = setTimeout(() => {
@@ -55,7 +50,7 @@ export function FactCard(props: Props) {
   });
 
   function handleDice() {
-    if (!ready() || !hasFacts()) return;
+    if (!ready()) return;
 
     setFading(true);
     fadeTimer = setTimeout(() => {
@@ -80,7 +75,7 @@ export function FactCard(props: Props) {
           aria-label="换一条"
           type="button"
           onClick={handleDice}
-          disabled={!ready() || !hasFacts() || fading() || !imageLoaded()}
+          disabled={!ready() || fading() || !imageLoaded()}
         >
           {props.children}
         </button>
@@ -90,17 +85,13 @@ export function FactCard(props: Props) {
           when={ready() && fact()}
           keyed
           fallback={
-            hasFacts() ? (
-              <div class="mt-3 animate-pulse">
-                <div class="aspect-3/2 w-full rounded-xl bg-black/8 dark:bg-white/10" />
-                <div class="mt-3 space-y-2">
-                  <div class="h-4 w-full rounded-full bg-black/8 dark:bg-white/10" />
-                  <div class="h-4 w-10/12 rounded-full bg-black/8 dark:bg-white/10" />
-                </div>
+            <div class="mt-3 animate-pulse">
+              <div class="aspect-3/2 w-full rounded-xl bg-black/8 dark:bg-white/10" />
+              <div class="mt-3 space-y-2">
+                <div class="h-4 w-full rounded-full bg-black/8 dark:bg-white/10" />
+                <div class="h-4 w-10/12 rounded-full bg-black/8 dark:bg-white/10" />
               </div>
-            ) : (
-              <div class="mt-3 text-sm leading-relaxed opacity-60">今天没有可以展示的 fact 呢</div>
-            )
+            </div>
           }
         >
           {currentFact => (
