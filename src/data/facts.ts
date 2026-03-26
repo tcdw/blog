@@ -5,6 +5,7 @@ import hobbyAbstract from "@/assets/facts/hobby_abstract.jpg";
 import hobbyGoods from "@/assets/facts/hobby_goods.jpg";
 import hobbyHomelab from "@/assets/facts/hobby_homelab.jpg";
 import favoriteNayukiTea from "@/assets/facts/favorite_nayuki_tea.jpg";
+import factGadgets from "@/assets/facts/fact_gadgets.jpg";
 
 export interface Fact {
   image: ImageMetadata;
@@ -47,5 +48,10 @@ export const FACTS: Fact[] = [
     image: favoriteNayukiTea,
     alt: "奈雪的茶",
     text: "tcdw 喜欢喝奈雪的茶。",
+  },
+  {
+    image: factGadgets,
+    alt: "小玩意",
+    text: "tcdw 囤积了各种小玩意，尤其是 IT 设备周边。",
   },
 ];
