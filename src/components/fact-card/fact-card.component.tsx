@@ -1,4 +1,4 @@
-import { Show, createMemo, createSignal, onCleanup, onMount, type JSX } from "solid-js";
+import { Show, createEffect, createMemo, createSignal, on, onCleanup, onMount, type JSX } from "solid-js";
 import { createInitialPlaylist, createPlaylist } from "./fact-card-helpers";
 import { fadeDuration, initialRevealDelay } from "./fact-card.const";
 import type { ProcessedFact } from "./types";
@@ -13,12 +13,24 @@ export function FactCard(props: Props) {
   const [index, setIndex] = createSignal(0);
   const [fading, setFading] = createSignal(false);
   const [ready, setReady] = createSignal(false);
+  const [imageLoaded, setImageLoaded] = createSignal(false);
 
   let revealTimer: ReturnType<typeof setTimeout> | undefined;
   let fadeTimer: ReturnType<typeof setTimeout> | undefined;
 
   const hasFacts = createMemo(() => props.facts.length > 0);
   const fact = createMemo<ProcessedFact | null>(() => props.facts[playlist()[index()] ?? 0] ?? null);
+  const busy = createMemo(() => hasFacts() && (!ready() || !imageLoaded()));
+
+  createEffect(
+    on(
+      () => fact()?.src,
+      source => {
+        if (!source) return;
+        setImageLoaded(false);
+      }
+    )
+  );
 
   onMount(() => {
     if (!hasFacts()) {
@@ -68,14 +80,15 @@ export function FactCard(props: Props) {
           aria-label="换一条"
           type="button"
           onClick={handleDice}
-          disabled={!ready() || !hasFacts()}
+          disabled={!ready() || !hasFacts() || fading() || !imageLoaded()}
         >
           {props.children}
         </button>
       </div>
-      <div aria-busy={!ready()} class="transition-opacity duration-200" style={{ opacity: fading() ? "0" : "1" }}>
+      <div aria-busy={busy()} class="transition-opacity duration-200" style={{ opacity: fading() ? "0" : "1" }}>
         <Show
           when={ready() && fact()}
+          keyed
           fallback={
             hasFacts() ? (
               <div class="mt-3 animate-pulse">
@@ -93,17 +106,26 @@ export function FactCard(props: Props) {
           {currentFact => (
             <>
               <div class="relative overflow-hidden rounded-xl bg-white dark:bg-black mt-3">
+                <Show when={!imageLoaded()}>
+                  <div class="absolute inset-0 animate-pulse bg-black/8 dark:bg-white/10" />
+                </Show>
                 <img
-                  src={currentFact().src}
-                  srcset={currentFact().srcSet}
-                  width={currentFact().width}
-                  height={currentFact().height}
-                  alt={currentFact().alt}
-                  class="aspect-3/2 object-cover filter grayscale opacity-70 w-full transition duration-300 hover:grayscale-0 hover:opacity-100"
+                  src={currentFact.src}
+                  srcset={currentFact.srcSet}
+                  width={currentFact.width}
+                  height={currentFact.height}
+                  alt={currentFact.alt}
+                  class="aspect-3/2 object-cover filter w-full transition duration-300 hover:grayscale-0 hover:opacity-100"
+                  classList={{
+                    "grayscale opacity-70": imageLoaded(),
+                    "opacity-0": !imageLoaded(),
+                  }}
                   loading="lazy"
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)}
                 />
               </div>
-              <div class="text-sm leading-relaxed opacity-60 mt-2">{currentFact().text}</div>
+              <div class="text-sm leading-relaxed opacity-60 mt-2">{currentFact.text}</div>
             </>
           )}
         </Show>
