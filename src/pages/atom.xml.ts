@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
     filterUnlisted: true,
   });
 
-  const siteUrl = context.site ? context.site.toString() : "https://tcdw.github.io/blog/";
+  const siteUrl = context.site ? context.site.toString() : "https://www.tcdw.net/";
 
   const feed = new Feed({
     title: SITE_TITLE,
@@ -32,8 +32,8 @@ export async function GET(context: APIContext) {
   for (const post of posts) {
     feed.addItem({
       title: post.data.title,
-      id: new URL(`/blog/${post.id}/`, siteUrl).toString(),
-      link: new URL(`/blog/${post.id}/`, siteUrl).toString(),
+      id: new URL(`/post/${post.id}/`, siteUrl).toString(),
+      link: new URL(`/post/${post.id}/`, siteUrl).toString(),
       description: post.data.description,
       content: await marked.parse(post.body ?? ""),
       author: [

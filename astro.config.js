@@ -6,14 +6,16 @@ import tailwindcss from "@tailwindcss/vite";
 
 import icon from "astro-icon";
 
+const deploymentSite = process.env.SITE_URL || process.env.CF_PAGES_URL || "https://www.tcdw.net";
+const normalizedSite = /^https?:\/\//.test(deploymentSite) ? deploymentSite : `https://${deploymentSite}`;
+
 // https://astro.build/config
 export default defineConfig({
-  // 请修改为你自己的线上地址，谢谢茄子
-  site: "https://tcdw.github.io/blog",
+  // 生产环境优先使用显式配置的线上地址，其次退回到 Cloudflare Pages 提供的部署 URL
+  site: normalizedSite,
 
-  // 如果你的网站在子路径下（例如 `https://example.com/koi/`），则填写 `/koi/`
-  // 在根路径下（例如 `https://example.com/`）则填写 `/`
-  base: process.env.NODE_ENV === "production" ? "/blog/" : "",
+  // Cloudflare Pages 部署在根路径
+  base: "/",
 
   integrations: [mdx(), sitemap(), solid(), icon()],
 

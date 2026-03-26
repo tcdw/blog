@@ -1,0 +1,46 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Container from "../components/Container.astro";
+import BackdropBlock from "../components/BackdropBlock.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "404";
+const description = "你访问的页面不存在，或者已经被移动。";
+---
+
+<BaseLayout>
+  <BaseHead slot="head" title={title} description={description} />
+  <Header />
+  <Container defaultPadding={false} backdrop={false}>
+    <BackdropBlock class="p-8 md:p-10 text-black dark:text-white">
+      <p class="text-sm uppercase tracking-[0.3em] opacity-50">404</p>
+      <h2 class="mt-3 text-4xl leading-tight font-bold md:text-5xl">页面走丢了</h2>
+      <p class="mt-4 max-w-2xl text-base leading-8 opacity-70">
+        这个地址可能已经改名、搬家，或者链接里混进了奇怪的东西。
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a
+          href="./"
+          class="rounded-full bg-primary-700 px-6 py-3 text-white transition-colors hover:bg-primary-800"
+        >
+          回到首页
+        </a>
+        <a
+          href="./blog/"
+          class="rounded-full bg-black/5 px-6 py-3 transition-colors hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/15"
+        >
+          去博客列表
+        </a>
+        <a
+          href="./page/archive/"
+          class="rounded-full bg-black/5 px-6 py-3 transition-colors hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/15"
+        >
+          查看归档
+        </a>
+      </div>
+    </BackdropBlock>
+  </Container>
+  <Footer />
+</BaseLayout>
