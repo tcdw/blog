@@ -6,6 +6,7 @@ import hobbyGoods from "@/assets/facts/hobby_goods.jpg";
 import hobbyHomelab from "@/assets/facts/hobby_homelab.jpg";
 import favoriteNayukiTea from "@/assets/facts/favorite_nayuki_tea.jpg";
 import factGadgets from "@/assets/facts/fact_gadgets.jpg";
+import factTravelGears from "@/assets/facts/fact_travel_gears.jpg";
 
 export interface Fact {
   image: ImageMetadata;
@@ -52,6 +53,11 @@ export const FACTS: Fact[] = [
   {
     image: factGadgets,
     alt: "小玩意",
-    text: "tcdw 囤积了各种小玩意，尤其是 IT 设备周边。",
+    text: "tcdw 简直像是个长不大的赛博拾荒者哦w",
+  },
+  {
+    image: factTravelGears,
+    alt: "旅行装备",
+    text: "出门带的「生活必需品」全都是充电头和各种线缆呢……没有电的话，这家伙一定活不下去的吧（",
   },
 ];
