@@ -15,6 +15,7 @@ import { FactCard } from "@/components/fact-card/fact-card.component";
 import { FACTS } from "@/data/facts";
 import type { ProcessedFact } from "@/components/fact-card/types";
 import { filterPosts } from "@/utils/misc";
+import { DEFAULT_OG_IMAGE } from "@/utils/og";
 import removeMarkdown from "@/utils/vendors/markdown-to-text";
 
 const processedFacts: ProcessedFact[] = await Promise.all(
@@ -47,7 +48,7 @@ function getPostExcerpt(post: CollectionEntry<"blog">) {
 ---
 
 <BaseLayout>
-  <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} image={DEFAULT_OG_IMAGE} />
   <Header hasTitle={false} />
   <Container defaultPadding={false} backdrop={false} mainClass="max-w-5xl">
     <BackdropBlock class={"p-6 md:p-8 space-y-4"}>

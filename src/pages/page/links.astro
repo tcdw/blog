@@ -4,11 +4,12 @@ import Friend from "../../components/friend/Friend.astro";
 import FriendList from "../../components/friend/FriendList.astro";
 import FriendCategoryTitle from "../../components/friend/FriendCategoryTitle.astro";
 import MarkdownBody from "../../components/MarkdownBody.astro";
+import { getPageOgImagePath, STATIC_PAGE_OG } from "@/utils/og";
 
 import * as markdownData from "./_links.md";
 ---
 
-<BlogPage title="链接" description="">
+<BlogPage title="链接" description={STATIC_PAGE_OG.links.description} image={getPageOgImagePath("links")}>
   <FriendCategoryTitle>博客</FriendCategoryTitle>
   <FriendList>
     <Friend

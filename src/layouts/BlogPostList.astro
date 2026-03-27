@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Container from "../components/Container.astro";
 import ArticleListItem from "../components/ArticleListItem.astro";
+import { BLOG_OG_IMAGE } from "@/utils/og";
 import removeMarkdown from "../utils/vendors/markdown-to-text";
 import type { CollectionEntry } from "astro:content";
 
@@ -20,7 +21,7 @@ const { data, currentPage, lastPage, largeBanner = false } = Astro.props;
 ---
 
 <BaseLayout>
-  <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <BaseHead slot="head" title={SITE_TITLE} description={SITE_DESCRIPTION} image={BLOG_OG_IMAGE} />
   <Header />
   <Container defaultPadding={true}>
     <div class="-mt-10 md:-mt-12">

@@ -5,13 +5,14 @@ import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
 import BackdropBlock from "../components/BackdropBlock.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { NOT_FOUND_OG_IMAGE } from "@/utils/og";
 
 const title = "404";
 const description = "你访问的页面不存在，或者已经被移动。";
 ---
 
 <BaseLayout>
-  <BaseHead slot="head" title={title} description={description} />
+  <BaseHead slot="head" title={title} description={description} image={NOT_FOUND_OG_IMAGE} />
   <Header />
   <Container defaultPadding={false} backdrop={false}>
     <BackdropBlock class="p-8 md:p-10 text-black dark:text-white">

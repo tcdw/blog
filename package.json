@@ -28,6 +28,7 @@
     "markdown-to-text": "^0.1.1",
     "marked": "^17.0.5",
     "prettier": "^3.8.1",
+    "satori": "^0.26.0",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.11",
     "tailwind-merge": "^3.5.0",

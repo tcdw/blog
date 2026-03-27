@@ -1,7 +1,9 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import { normalizeOgDescription, trimOgText } from "@/utils/og";
 import {filterPosts} from "../../utils/misc";
+import removeMarkdown from "@/utils/vendors/markdown-to-text";
 
 export async function getStaticPaths() {
 	const posts = filterPosts(await getCollection('blog'), {
@@ -17,8 +19,9 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const description = post.data.description || trimOgText(normalizeOgDescription(removeMarkdown(post.body ?? "")), 120);
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} slug={post.id} description={description}>
 	<Content />
 </BlogPost>

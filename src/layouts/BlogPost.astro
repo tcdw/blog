@@ -7,14 +7,18 @@ import FormattedDate from '../components/FormattedDate.astro';
 import BaseLayout from "./BaseLayout.astro";
 import Container from "../components/Container.astro";
 import MarkdownBody from "../components/MarkdownBody.astro";
+import { getPostOgImagePath } from "@/utils/og";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {
+	slug: string;
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
+const ogImage = heroImage || getPostOgImagePath(slug);
 ---
 
 <BaseLayout>
-	<BaseHead slot="head" title={title} description={description} image={heroImage} />
+	<BaseHead slot="head" title={title} description={description} image={ogImage} />
 	<Header />
 	<Container defaultPadding={true}>
 		<div class="mb-8">

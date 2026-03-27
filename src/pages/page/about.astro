@@ -1,13 +1,15 @@
 ---
 import Layout from '../../layouts/BlogPage.astro';
 import MarkdownBody from "../../components/MarkdownBody.astro";
+import { getPageOgImagePath, STATIC_PAGE_OG } from "@/utils/og";
 
 import * as markdownData from "./_about.md";
 ---
 
 <Layout
 	title="关于"
-	description=""
+	description={STATIC_PAGE_OG.about.description}
+	image={getPageOgImagePath("about")}
 >
 	<MarkdownBody class="mt-6">
 		<markdownData.Content />

@@ -4,6 +4,7 @@ import MarkdownBody from "../../components/MarkdownBody.astro";
 
 import { filterPosts, type Post } from "../../utils/misc";
 import { getCollection } from "astro:content";
+import { getPageOgImagePath, STATIC_PAGE_OG } from "@/utils/og";
 
 // 归档页面处理流程
 const posts = filterPosts(await getCollection("blog"), {
@@ -13,6 +14,7 @@ const posts = filterPosts(await getCollection("blog"), {
 const yearMap = new Map<number, Post[]>();
 const yearList: { label: string, value: Post[] }[] = [];
 const amount = posts.length;
+const description = `按年份整理的 ${amount} 篇文章归档。`;
 
 posts.sort((a, b) => {
     // 按时间降序
@@ -45,7 +47,8 @@ yearMap.forEach((v, k) => {
 
 <Layout
     title="归档"
-    description=""
+    description={description || STATIC_PAGE_OG.archive.description}
+    image={getPageOgImagePath("archive")}
 >
     <MarkdownBody class="mt-6">
         <p>如今，本博客已经有 {amount} 篇文章了呢。</p>
