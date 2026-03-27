@@ -17,7 +17,7 @@ export default defineConfig({
   // Cloudflare Pages 部署在根路径
   base: "/",
 
-  integrations: [mdx(), sitemap(), solid(), icon()],
+  integrations: [mdx(), sitemap(), solid({ exclude: [/src\/utils\/og-render\.tsx$/] }), icon()],
 
   markdown: {
     remarkRehype: {
