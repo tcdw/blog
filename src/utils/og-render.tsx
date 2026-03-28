@@ -14,9 +14,15 @@ const FONT_NAME = "ChillRoundF";
 const FONT_REGULAR_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFRegular.otf");
 const FONT_BOLD_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFBold.otf");
 const AVATAR_FILE = join(process.cwd(), "src/assets/avatar.png");
+const CORNER_MASK_FILE = join(process.cwd(), "src/assets/corner_mask.png");
+const CORNER_FILE = join(process.cwd(), "src/assets/corner.png");
 const fontRegularPromise = readFile(FONT_REGULAR_FILE);
 const fontBoldPromise = readFile(FONT_BOLD_FILE);
 const avatarDataUriPromise = readFile(AVATAR_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
+const cornerMaskDataUriPromise = readFile(CORNER_MASK_FILE).then(
+  buf => `data:image/png;base64,${buf.toString("base64")}`,
+);
+const cornerDataUriPromise = readFile(CORNER_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
 
 export interface OgCardPayload {
   title: string;
@@ -29,10 +35,12 @@ export interface OgCardPayload {
 export async function renderOgImage(payload: OgCardPayload) {
   const description = trimOgText(normalizeOgDescription(payload.description), 100);
   const title = trimOgText(payload.title.trim(), 64);
-  const [fontRegular, fontBold, avatarDataUri] = await Promise.all([
+  const [fontRegular, fontBold, avatarDataUri, cornerMaskDataUri, cornerDataUri] = await Promise.all([
     fontRegularPromise,
     fontBoldPromise,
     avatarDataUriPromise,
+    cornerMaskDataUriPromise,
+    cornerDataUriPromise,
   ]);
 
   const svg = await satori(
@@ -78,6 +86,33 @@ export async function renderOgImage(payload: OgCardPayload) {
           boxShadow: "0 20px 50px rgba(15, 23, 42, 0.1)",
         }}
       >
+        <img
+          src={cornerMaskDataUri}
+          width={721}
+          height={749}
+          style={{
+            position: "absolute",
+            right: 60,
+            bottom: -19,
+            width: 500,
+            height: 519,
+          }}
+        />
+
+        <img
+          src={cornerDataUri}
+          width={721}
+          height={749}
+          style={{
+            position: "absolute",
+            right: 60,
+            bottom: -19,
+            width: 500,
+            height: 519,
+            opacity: 0.07,
+          }}
+        />
+
         <div style={{ display: "flex", alignItems: "center", marginBottom: "40px" }}>
           <img
             src={avatarDataUri}
@@ -92,10 +127,12 @@ export async function renderOgImage(payload: OgCardPayload) {
             }}
           />
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <div style={{ fontSize: "30px", fontWeight: 800, color: "#1e293b", letterSpacing: "-0.5px" }}>
+            <div
+              style={{ fontSize: "30px", fontWeight: 800, color: "#1e293b", letterSpacing: "-0.5px", lineHeight: 1.75 }}
+            >
               {SITE_TITLE}
             </div>
-            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
+            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "8px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
           </div>
         </div>
 
