@@ -11,9 +11,12 @@ import { normalizeOgDescription, trimOgText } from "@/utils/og";
 const OG_WIDTH = 1200;
 const OG_HEIGHT = 630;
 const FONT_NAME = "ChillRoundF";
-const FONT_WEIGHT = 400;
-const FONT_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundF-Regular.otf");
-const fontDataPromise = readFile(FONT_FILE);
+const FONT_REGULAR_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFRegular.otf");
+const FONT_BOLD_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFBold.otf");
+const AVATAR_FILE = join(process.cwd(), "src/assets/avatar.png");
+const fontRegularPromise = readFile(FONT_REGULAR_FILE);
+const fontBoldPromise = readFile(FONT_BOLD_FILE);
+const avatarDataUriPromise = readFile(AVATAR_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
 
 export interface OgCardPayload {
   title: string;
@@ -23,169 +26,91 @@ export interface OgCardPayload {
   meta?: string;
 }
 
-function getTitleFontSize(title: string) {
-  if (title.length > 44) {
-    return 52;
-  }
-
-  if (title.length > 26) {
-    return 60;
-  }
-
-  return 68;
-}
-
 export async function renderOgImage(payload: OgCardPayload) {
-  const description = trimOgText(normalizeOgDescription(payload.description), 120);
+  const description = trimOgText(normalizeOgDescription(payload.description), 100);
   const title = trimOgText(payload.title.trim(), 64);
-  const titleFontSize = getTitleFontSize(title);
-  const fontData = await fontDataPromise;
+  const [fontRegular, fontBold, avatarDataUri] = await Promise.all([
+    fontRegularPromise,
+    fontBoldPromise,
+    avatarDataUriPromise,
+  ]);
 
   const svg = await satori(
     <div
       lang="zh-CN"
       style={{
         display: "flex",
-        width: `${OG_WIDTH}px`,
-        height: `${OG_HEIGHT}px`,
+        width: "1200px",
+        height: "630px",
         position: "relative",
-        overflow: "hidden",
-        background: "#eff6ff",
+        background: "#f0f9ff", // 稍微明亮一点的蓝
         color: "#0f172a",
         fontFamily: FONT_NAME,
       }}
     >
+      {/* 背景装饰：增强对比度 */}
       <div
         style={{
           display: "flex",
           position: "absolute",
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-          backgroundImage: "linear-gradient(135deg, #f8fbff 0%, #dbeafe 58%, #fff7ed 100%)",
-        }}
-      />
-      <div
-        style={{
-          display: "flex",
-          position: "absolute",
-          top: "-96px",
-          right: "-72px",
-          width: "360px",
-          height: "360px",
+          top: "-100px",
+          right: "-50px",
+          width: "500px",
+          height: "500px",
           borderRadius: "999px",
-          background: "rgba(14, 165, 233, 0.16)",
+          background: "radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, rgba(14, 165, 233, 0) 70%)",
         }}
       />
-      <div
-        style={{
-          display: "flex",
-          position: "absolute",
-          bottom: "-120px",
-          left: "-60px",
-          width: "340px",
-          height: "340px",
-          borderRadius: "999px",
-          background: "rgba(251, 191, 36, 0.14)",
-        }}
-      />
+
       <div
         style={{
           display: "flex",
           position: "relative",
           flexDirection: "column",
-          justifyContent: "space-between",
-          width: "100%",
-          margin: "32px",
-          padding: "42px 46px",
-          borderRadius: "34px",
-          background: "rgba(255, 255, 255, 0.82)",
-          border: "1px solid rgba(255, 255, 255, 0.9)",
-          boxShadow: "0 24px 80px rgba(15, 23, 42, 0.14)",
+          width: "1120px",
+          height: "550px", // 固定高度让间距更可控
+          margin: "40px",
+          padding: "60px",
+          borderRadius: "40px",
+          background: "rgba(255, 255, 255, 0.85)",
+          backdropFilter: "blur(10px)", // Satori 不支持这个，但如果转 SVG 后续处理可以考虑
+          border: "1px solid rgba(255, 255, 255, 0.5)",
+          boxShadow: "0 20px 50px rgba(15, 23, 42, 0.1)",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          <div
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "40px" }}>
+          <img
+            src={avatarDataUri}
+            width={70}
+            height={70}
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
+              width: "70px",
+              height: "70px",
+              borderRadius: "70px",
+              marginRight: "20px",
+              border: "2px solid #e2e8f0",
             }}
-          >
-            <div
-              style={{
-                width: "14px",
-                height: "14px",
-                borderRadius: "999px",
-                background: "#0284c7",
-              }}
-            />
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                padding: "8px 14px",
-                borderRadius: "999px",
-                background: "rgba(2, 132, 199, 0.1)",
-                color: "#0369a1",
-                fontSize: "22px",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-              }}
-            >
-              {payload.eyebrow}
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-              color: "#475569",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                fontSize: "26px",
-              }}
-            >
+          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontSize: "30px", fontWeight: 800, color: "#1e293b", letterSpacing: "-0.5px" }}>
               {SITE_TITLE}
             </div>
-            <div
-              style={{
-                display: "flex",
-                fontSize: "18px",
-                opacity: 0.75,
-              }}
-            >
-              {`by ${SITE_AUTHOR_NAME}`}
-            </div>
+            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "24px",
-            marginTop: "22px",
-          }}
-        >
+
+        {/* 主体内容 */}
+        <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
           <div
             style={{
               display: "flex",
-              fontSize: `${titleFontSize}px`,
-              lineHeight: 1.18,
-              fontWeight: FONT_WEIGHT,
+              fontSize: "60px", // 调大标题，OG 图在手机上标题要够大
+              lineHeight: 1.2,
+              fontWeight: 900,
               color: "#0f172a",
-              maxWidth: "980px",
+              marginBottom: "24px",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
             }}
           >
             {title}
@@ -193,59 +118,14 @@ export async function renderOgImage(payload: OgCardPayload) {
           <div
             style={{
               display: "flex",
-              fontSize: "29px",
-              lineHeight: 1.55,
-              color: "#334155",
-              maxWidth: "980px",
+              fontSize: "30px", // 稍微调大一点
+              lineHeight: 1.6,
+              color: "#475569",
+              opacity: 0.9,
             }}
           >
             {description}
           </div>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "24px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "16px",
-              color: "#0f172a",
-            }}
-          >
-            <div
-              style={{
-                width: "18px",
-                height: "18px",
-                borderRadius: "999px",
-                background: "#f59e0b",
-              }}
-            />
-            <div
-              style={{
-                display: "flex",
-                fontSize: "26px",
-              }}
-            >
-              {payload.pathLabel}
-            </div>
-          </div>
-          {payload.meta ? (
-            <div
-              style={{
-                display: "flex",
-                fontSize: "22px",
-                color: "#64748b",
-              }}
-            >
-              {payload.meta}
-            </div>
-          ) : null}
         </div>
       </div>
     </div>,
@@ -255,8 +135,14 @@ export async function renderOgImage(payload: OgCardPayload) {
       fonts: [
         {
           name: FONT_NAME,
-          data: fontData,
-          weight: FONT_WEIGHT,
+          data: fontRegular,
+          weight: 400,
+          style: "normal",
+        },
+        {
+          name: FONT_NAME,
+          data: fontBold,
+          weight: 700,
           style: "normal",
         },
       ],
