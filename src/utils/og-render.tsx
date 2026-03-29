@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { SITE_AUTHOR_NAME, SITE_TITLE } from "@/consts";
 import sharp from "sharp";
 import satori, { type SatoriOptions } from "satori";
+import { readFileAsDataUri } from "@/utils/data-uri";
 import { normalizeOgDescription, trimOgText } from "@/utils/og";
 
 const ogWidth = 1200;
@@ -29,11 +30,9 @@ const cornerMaskFile = join(process.cwd(), "src/assets/corner_mask.png");
 const cornerFile = join(process.cwd(), "src/assets/corner.png");
 const fontRegularPromise = readFile(fontRegularFile);
 const fontBoldPromise = readFile(fontBoldFile);
-const avatarDataUriPromise = readFile(avatarFile).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
-const cornerMaskDataUriPromise = readFile(cornerMaskFile).then(
-  buf => `data:image/png;base64,${buf.toString("base64")}`,
-);
-const cornerDataUriPromise = readFile(cornerFile).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
+const avatarDataUriPromise = readFileAsDataUri(avatarFile, "image/png");
+const cornerMaskDataUriPromise = readFileAsDataUri(cornerMaskFile, "image/png");
+const cornerDataUriPromise = readFileAsDataUri(cornerFile, "image/png");
 const fontDataPromise = Promise.all([fontRegularPromise, fontBoldPromise]).then(([fontRegular, fontBold]) => ({
   fontRegular,
   fontBold,
