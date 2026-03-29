@@ -76,9 +76,9 @@ export async function renderOgImage(payload: OgCardPayload) {
           position: "relative",
           flexDirection: "column",
           width: "1120px",
-          height: "550px", // 固定高度让间距更可控
+          height: "550px",
           margin: "40px",
-          padding: "60px",
+          padding: "50px",
           borderRadius: "40px",
           background: "rgba(255, 255, 255, 0.85)",
           backdropFilter: "blur(10px)", // Satori 不支持这个，但如果转 SVG 后续处理可以考虑
@@ -113,6 +113,7 @@ export async function renderOgImage(payload: OgCardPayload) {
           }}
         />
 
+        {/* 作者信息 */}
         <div style={{ display: "flex", alignItems: "center", marginBottom: "40px" }}>
           <img
             src={avatarDataUri}
@@ -128,11 +129,16 @@ export async function renderOgImage(payload: OgCardPayload) {
           />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
-              style={{ fontSize: "30px", fontWeight: 800, color: "#1e293b", letterSpacing: "-0.5px", lineHeight: 1.75 }}
+              style={{
+                fontSize: "30px",
+                fontWeight: 800,
+                color: "#1e293b",
+                letterSpacing: "-0.5px",
+              }}
             >
               {SITE_TITLE}
             </div>
-            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "8px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
+            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
           </div>
         </div>
 
@@ -141,8 +147,8 @@ export async function renderOgImage(payload: OgCardPayload) {
           <div
             style={{
               display: "flex",
-              fontSize: "60px", // 调大标题，OG 图在手机上标题要够大
-              lineHeight: 1.2,
+              fontSize: "60px",
+              lineHeight: 1.375,
               fontWeight: 900,
               color: "#0f172a",
               marginBottom: "24px",
@@ -155,8 +161,8 @@ export async function renderOgImage(payload: OgCardPayload) {
           <div
             style={{
               display: "flex",
-              fontSize: "30px", // 稍微调大一点
-              lineHeight: 1.6,
+              fontSize: "30px",
+              lineHeight: 1.75,
               color: "#475569",
               opacity: 0.9,
             }}
@@ -191,7 +197,7 @@ export async function renderOgImage(payload: OgCardPayload) {
   return new Response(png, {
     headers: {
       "Content-Type": "image/png",
-      "Cache-Control": "public, max-age=31536000, immutable",
+      // "Cache-Control": "public, max-age=31536000, immutable",
     },
   });
 }
