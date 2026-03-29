@@ -8,32 +8,32 @@ import sharp from "sharp";
 import satori, { type SatoriOptions } from "satori";
 import { normalizeOgDescription, trimOgText } from "@/utils/og";
 
-const OG_WIDTH = 1200;
-const OG_HEIGHT = 630;
-const FONT_NAME = "ChillRoundF";
-const CARD_X = 40;
-const CARD_Y = 40;
-const CARD_WIDTH = 1120;
-const CARD_HEIGHT = 550;
-const CARD_PADDING = 50;
-const AUTHOR_SECTION_HEIGHT = 70;
-const AUTHOR_SECTION_GAP = 40;
-const TEXT_X = CARD_X + CARD_PADDING;
-const TEXT_Y = CARD_Y + CARD_PADDING + AUTHOR_SECTION_HEIGHT + AUTHOR_SECTION_GAP;
-const TEXT_WIDTH = CARD_WIDTH - CARD_PADDING * 2;
-const TEXT_HEIGHT = CARD_HEIGHT - CARD_PADDING * 2 - AUTHOR_SECTION_HEIGHT - AUTHOR_SECTION_GAP;
-const FONT_REGULAR_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFRegular.otf");
-const FONT_BOLD_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFBold.otf");
-const AVATAR_FILE = join(process.cwd(), "src/assets/avatar.png");
-const CORNER_MASK_FILE = join(process.cwd(), "src/assets/corner_mask.png");
-const CORNER_FILE = join(process.cwd(), "src/assets/corner.png");
-const fontRegularPromise = readFile(FONT_REGULAR_FILE);
-const fontBoldPromise = readFile(FONT_BOLD_FILE);
-const avatarDataUriPromise = readFile(AVATAR_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
-const cornerMaskDataUriPromise = readFile(CORNER_MASK_FILE).then(
+const ogWidth = 1200;
+const ogHeight = 630;
+const fontName = "ChillRoundF";
+const cardX = 40;
+const cardY = 40;
+const cardWidth = 1120;
+const cardHeight = 550;
+const cardPadding = 50;
+const authorSectionHeight = 70;
+const authorSectionGap = 40;
+const textX = cardX + cardPadding;
+const textY = cardY + cardPadding + authorSectionHeight + authorSectionGap;
+const textWidth = cardWidth - cardPadding * 2;
+const textHeight = cardHeight - cardPadding * 2 - authorSectionHeight - authorSectionGap;
+const fontRegularFile = join(process.cwd(), "src/assets/fonts/og/ChillRoundFRegular.otf");
+const fontBoldFile = join(process.cwd(), "src/assets/fonts/og/ChillRoundFBold.otf");
+const avatarFile = join(process.cwd(), "src/assets/avatar.png");
+const cornerMaskFile = join(process.cwd(), "src/assets/corner_mask.png");
+const cornerFile = join(process.cwd(), "src/assets/corner.png");
+const fontRegularPromise = readFile(fontRegularFile);
+const fontBoldPromise = readFile(fontBoldFile);
+const avatarDataUriPromise = readFile(avatarFile).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
+const cornerMaskDataUriPromise = readFile(cornerMaskFile).then(
   buf => `data:image/png;base64,${buf.toString("base64")}`,
 );
-const cornerDataUriPromise = readFile(CORNER_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
+const cornerDataUriPromise = readFile(cornerFile).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
 const fontDataPromise = Promise.all([fontRegularPromise, fontBoldPromise]).then(([fontRegular, fontBold]) => ({
   fontRegular,
   fontBold,
@@ -58,17 +58,17 @@ export interface OgCardPayload {
 
 function getSatoriOptions(fontRegular: Buffer, fontBold: Buffer): SatoriOptions {
   return {
-    width: OG_WIDTH,
-    height: OG_HEIGHT,
+    width: ogWidth,
+    height: ogHeight,
     fonts: [
       {
-        name: FONT_NAME,
+        name: fontName,
         data: fontRegular,
         weight: 400,
         style: "normal" as const,
       },
       {
-        name: FONT_NAME,
+        name: fontName,
         data: fontBold,
         weight: 700,
         style: "normal" as const,
@@ -93,7 +93,7 @@ async function renderBackgroundPng() {
         position: "relative",
         background: "#f0f9ff",
         color: "#0f172a",
-        fontFamily: FONT_NAME,
+        fontFamily: fontName,
       }}
     >
       <div
@@ -206,17 +206,17 @@ async function renderTextOverlaySvg(title: string, description: string) {
         position: "relative",
         background: "transparent",
         color: "#0f172a",
-        fontFamily: FONT_NAME,
+        fontFamily: fontName,
       }}
     >
       <div
         style={{
           display: "flex",
           position: "absolute",
-          top: `${TEXT_Y}px`,
-          left: `${TEXT_X}px`,
-          width: `${TEXT_WIDTH}px`,
-          height: `${TEXT_HEIGHT}px`,
+          top: `${textY}px`,
+          left: `${textX}px`,
+          width: `${textWidth}px`,
+          height: `${textHeight}px`,
           flexDirection: "column",
           overflow: "hidden",
         }}
