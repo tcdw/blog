@@ -5,12 +5,23 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { SITE_AUTHOR_NAME, SITE_TITLE } from "@/consts";
 import sharp from "sharp";
-import satori from "satori";
+import satori, { type SatoriOptions } from "satori";
 import { normalizeOgDescription, trimOgText } from "@/utils/og";
 
 const OG_WIDTH = 1200;
 const OG_HEIGHT = 630;
 const FONT_NAME = "ChillRoundF";
+const CARD_X = 40;
+const CARD_Y = 40;
+const CARD_WIDTH = 1120;
+const CARD_HEIGHT = 550;
+const CARD_PADDING = 50;
+const AUTHOR_SECTION_HEIGHT = 70;
+const AUTHOR_SECTION_GAP = 40;
+const TEXT_X = CARD_X + CARD_PADDING;
+const TEXT_Y = CARD_Y + CARD_PADDING + AUTHOR_SECTION_HEIGHT + AUTHOR_SECTION_GAP;
+const TEXT_WIDTH = CARD_WIDTH - CARD_PADDING * 2;
+const TEXT_HEIGHT = CARD_HEIGHT - CARD_PADDING * 2 - AUTHOR_SECTION_HEIGHT - AUTHOR_SECTION_GAP;
 const FONT_REGULAR_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFRegular.otf");
 const FONT_BOLD_FILE = join(process.cwd(), "src/assets/fonts/og/ChillRoundFBold.otf");
 const AVATAR_FILE = join(process.cwd(), "src/assets/avatar.png");
@@ -23,6 +34,19 @@ const cornerMaskDataUriPromise = readFile(CORNER_MASK_FILE).then(
   buf => `data:image/png;base64,${buf.toString("base64")}`,
 );
 const cornerDataUriPromise = readFile(CORNER_FILE).then(buf => `data:image/png;base64,${buf.toString("base64")}`);
+const fontDataPromise = Promise.all([fontRegularPromise, fontBoldPromise]).then(([fontRegular, fontBold]) => ({
+  fontRegular,
+  fontBold,
+}));
+const staticAssetsPromise = Promise.all([avatarDataUriPromise, cornerMaskDataUriPromise, cornerDataUriPromise]).then(
+  ([avatarDataUri, cornerMaskDataUri, cornerDataUri]) => ({
+    avatarDataUri,
+    cornerMaskDataUri,
+    cornerDataUri,
+  }),
+);
+
+let backgroundPngPromise: Promise<Buffer> | undefined;
 
 export interface OgCardPayload {
   title: string;
@@ -32,15 +56,31 @@ export interface OgCardPayload {
   meta?: string;
 }
 
-export async function renderOgImage(payload: OgCardPayload) {
-  const description = trimOgText(normalizeOgDescription(payload.description), 100);
-  const title = trimOgText(payload.title.trim(), 64);
-  const [fontRegular, fontBold, avatarDataUri, cornerMaskDataUri, cornerDataUri] = await Promise.all([
-    fontRegularPromise,
-    fontBoldPromise,
-    avatarDataUriPromise,
-    cornerMaskDataUriPromise,
-    cornerDataUriPromise,
+function getSatoriOptions(fontRegular: Buffer, fontBold: Buffer): SatoriOptions {
+  return {
+    width: OG_WIDTH,
+    height: OG_HEIGHT,
+    fonts: [
+      {
+        name: FONT_NAME,
+        data: fontRegular,
+        weight: 400,
+        style: "normal" as const,
+      },
+      {
+        name: FONT_NAME,
+        data: fontBold,
+        weight: 700,
+        style: "normal" as const,
+      },
+    ],
+  };
+}
+
+async function renderBackgroundPng() {
+  const [{ fontRegular, fontBold }, { avatarDataUri, cornerMaskDataUri, cornerDataUri }] = await Promise.all([
+    fontDataPromise,
+    staticAssetsPromise,
   ]);
 
   const svg = await satori(
@@ -51,12 +91,11 @@ export async function renderOgImage(payload: OgCardPayload) {
         width: "1200px",
         height: "630px",
         position: "relative",
-        background: "#f0f9ff", // 稍微明亮一点的蓝
+        background: "#f0f9ff",
         color: "#0f172a",
         fontFamily: FONT_NAME,
       }}
     >
-      {/* 背景装饰：增强对比度 */}
       <div
         style={{
           display: "flex",
@@ -81,7 +120,7 @@ export async function renderOgImage(payload: OgCardPayload) {
           padding: "50px",
           borderRadius: "40px",
           background: "rgba(255, 255, 255, 0.85)",
-          backdropFilter: "blur(10px)", // Satori 不支持这个，但如果转 SVG 后续处理可以考虑
+          backdropFilter: "blur(10px)",
           border: "1px solid rgba(255, 255, 255, 0.5)",
           boxShadow: "0 20px 50px rgba(15, 23, 42, 0.1)",
         }}
@@ -113,8 +152,7 @@ export async function renderOgImage(payload: OgCardPayload) {
           }}
         />
 
-        {/* 作者信息 */}
-        <div style={{ display: "flex", alignItems: "center", marginBottom: "40px" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <img
             src={avatarDataUri}
             width={70}
@@ -141,23 +179,63 @@ export async function renderOgImage(payload: OgCardPayload) {
             <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
           </div>
         </div>
+      </div>
+    </div>,
+    getSatoriOptions(fontRegular, fontBold),
+  );
 
-        {/* 主体内容 */}
-        <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-          <div
-            style={{
-              display: "flex",
-              fontSize: "60px",
-              lineHeight: 1.375,
-              fontWeight: 900,
-              color: "#0f172a",
-              marginBottom: "24px",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-          >
-            {title}
-          </div>
+  return sharp(Buffer.from(svg)).png().toBuffer();
+}
+
+function getBackgroundPng() {
+  // Cache the static layer once per process so repeated OG renders only lay out text.
+  backgroundPngPromise ??= renderBackgroundPng();
+  return backgroundPngPromise;
+}
+
+async function renderTextOverlaySvg(title: string, description: string) {
+  const { fontRegular, fontBold } = await fontDataPromise;
+
+  return satori(
+    <div
+      lang="zh-CN"
+      style={{
+        display: "flex",
+        width: "1200px",
+        height: "630px",
+        position: "relative",
+        background: "transparent",
+        color: "#0f172a",
+        fontFamily: FONT_NAME,
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          position: "absolute",
+          top: `${TEXT_Y}px`,
+          left: `${TEXT_X}px`,
+          width: `${TEXT_WIDTH}px`,
+          height: `${TEXT_HEIGHT}px`,
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            fontSize: "60px",
+            lineHeight: 1.375,
+            fontWeight: 900,
+            color: "#0f172a",
+            marginBottom: description ? "24px" : "0",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          {title}
+        </div>
+        {description ? (
           <div
             style={{
               display: "flex",
@@ -169,32 +247,31 @@ export async function renderOgImage(payload: OgCardPayload) {
           >
             {description}
           </div>
-        </div>
+        ) : null}
       </div>
     </div>,
-    {
-      width: OG_WIDTH,
-      height: OG_HEIGHT,
-      fonts: [
-        {
-          name: FONT_NAME,
-          data: fontRegular,
-          weight: 400,
-          style: "normal",
-        },
-        {
-          name: FONT_NAME,
-          data: fontBold,
-          weight: 700,
-          style: "normal",
-        },
-      ],
-    },
+    getSatoriOptions(fontRegular, fontBold),
   );
+}
 
-  const png = await sharp(Buffer.from(svg)).png().toBuffer();
+export async function renderOgImage(payload: OgCardPayload) {
+  const description = trimOgText(normalizeOgDescription(payload.description), 100);
+  const title = trimOgText(payload.title.trim(), 64);
+  const [backgroundPng, textOverlaySvg] = await Promise.all([
+    getBackgroundPng(),
+    renderTextOverlaySvg(title, description),
+  ]);
+  const png = await sharp(backgroundPng)
+    .composite([
+      {
+        input: Buffer.from(textOverlaySvg),
+      },
+    ])
+    .png()
+    .toBuffer();
+  const responseBody = new Blob([new Uint8Array(png)], { type: "image/png" });
 
-  return new Response(png, {
+  return new Response(responseBody, {
     headers: {
       "Content-Type": "image/png",
       // "Cache-Control": "public, max-age=31536000, immutable",
