@@ -162,7 +162,7 @@ export async function renderOgImage(payload: OgCardPayload) {
             style={{
               display: "flex",
               fontSize: "30px",
-              lineHeight: 1.75,
+              lineHeight: 1.625,
               color: "#475569",
               opacity: 0.9,
             }}
