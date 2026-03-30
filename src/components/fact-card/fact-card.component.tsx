@@ -32,7 +32,6 @@ export function FactCard(props: Props) {
   );
 
   onMount(() => {
-    setReady(true);
     revealTimer = setTimeout(() => {
       setFading(true);
       fadeTimer = setTimeout(() => {
