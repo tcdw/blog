@@ -9,5 +9,7 @@ export const GET: APIRoute = async () => {
     description: "这个地址可能已经改名、搬家，或者链接里混进了奇怪的东西。",
     eyebrow: "404",
     pathLabel: "/404",
+    includeIdent: false,
+    largeText: true,
   });
 };

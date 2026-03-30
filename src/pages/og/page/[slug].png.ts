@@ -19,5 +19,7 @@ export const GET: APIRoute = async ({ props }) => {
     description: page.description,
     eyebrow: "Page",
     pathLabel: page.pathLabel,
+    includeIdent: false,
+    largeText: true,
   });
 };

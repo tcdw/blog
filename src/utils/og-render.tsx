@@ -45,7 +45,7 @@ const staticAssetsPromise = Promise.all([avatarDataUriPromise, cornerMaskDataUri
   }),
 );
 
-let backgroundPngPromise: Promise<Buffer> | undefined;
+let backgroundPngPromises: Map<boolean, Promise<Buffer>> = new Map();
 
 export interface OgCardPayload {
   title: string;
@@ -53,6 +53,8 @@ export interface OgCardPayload {
   eyebrow: string;
   pathLabel: string;
   meta?: string;
+  includeIdent?: boolean;
+  largeText?: boolean;
 }
 
 function getSatoriOptions(fontRegular: Buffer, fontBold: Buffer): SatoriOptions {
@@ -76,7 +78,7 @@ function getSatoriOptions(fontRegular: Buffer, fontBold: Buffer): SatoriOptions 
   };
 }
 
-async function renderBackgroundPng() {
+async function renderBackgroundPng(includeIdent: boolean = true) {
   const [{ fontRegular, fontBold }, { avatarDataUri, cornerMaskDataUri, cornerDataUri }] = await Promise.all([
     fontDataPromise,
     staticAssetsPromise,
@@ -151,33 +153,35 @@ async function renderBackgroundPng() {
           }}
         />
 
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src={avatarDataUri}
-            width={70}
-            height={70}
-            style={{
-              width: "70px",
-              height: "70px",
-              borderRadius: "70px",
-              marginRight: "20px",
-              border: "2px solid #e2e8f0",
-            }}
-          />
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
+        {includeIdent && (
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src={avatarDataUri}
+              width={70}
+              height={70}
               style={{
-                fontSize: "30px",
-                fontWeight: 800,
-                color: "#1e293b",
-                letterSpacing: "-0.5px",
+                width: "70px",
+                height: "70px",
+                borderRadius: "70px",
+                marginRight: "20px",
+                border: "2px solid #e2e8f0",
               }}
-            >
-              {SITE_TITLE}
+            />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  fontSize: "30px",
+                  fontWeight: 800,
+                  color: "#1e293b",
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                {SITE_TITLE}
+              </div>
+              <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
             </div>
-            <div style={{ fontSize: "20px", color: "#64748b", marginTop: "10px" }}>{`by ${SITE_AUTHOR_NAME}`}</div>
           </div>
-        </div>
+        )}
       </div>
     </div>,
     getSatoriOptions(fontRegular, fontBold),
@@ -186,14 +190,25 @@ async function renderBackgroundPng() {
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
 
-function getBackgroundPng() {
+function getBackgroundPng(includeIdent: boolean = true) {
   // Cache the static layer once per process so repeated OG renders only lay out text.
-  backgroundPngPromise ??= renderBackgroundPng();
-  return backgroundPngPromise;
+  if (!backgroundPngPromises.has(includeIdent)) {
+    backgroundPngPromises.set(includeIdent, renderBackgroundPng(includeIdent));
+  }
+  return backgroundPngPromises.get(includeIdent)!;
 }
 
-async function renderTextOverlaySvg(title: string, description: string) {
+async function renderTextOverlaySvg(
+  title: string,
+  description: string,
+  largeText: boolean = false,
+  textY: number,
+  textHeight: number,
+) {
   const { fontRegular, fontBold } = await fontDataPromise;
+
+  const titleFontSize = largeText ? 80 : 60;
+  const descFontSize = largeText ? 40 : 30;
 
   return satori(
     <div
@@ -223,7 +238,7 @@ async function renderTextOverlaySvg(title: string, description: string) {
         <div
           style={{
             display: "flex",
-            fontSize: "60px",
+            fontSize: `${titleFontSize}px`,
             lineHeight: 1.375,
             fontWeight: 900,
             color: "#0f172a",
@@ -238,7 +253,7 @@ async function renderTextOverlaySvg(title: string, description: string) {
           <div
             style={{
               display: "flex",
-              fontSize: "30px",
+              fontSize: `${descFontSize}px`,
               lineHeight: 1.625,
               color: "#475569",
               opacity: 0.9,
@@ -256,9 +271,13 @@ async function renderTextOverlaySvg(title: string, description: string) {
 export async function renderOgImage(payload: OgCardPayload) {
   const description = trimOgText(normalizeOgDescription(payload.description), 100);
   const title = trimOgText(payload.title.trim(), 64);
+  const includeIdent = payload.includeIdent ?? true;
+  const largeText = payload.largeText ?? false;
+  const textYValue = includeIdent ? textY : cardY + cardPadding;
+  const textHeightValue = includeIdent ? textHeight : cardHeight - cardPadding * 2;
   const [backgroundPng, textOverlaySvg] = await Promise.all([
-    getBackgroundPng(),
-    renderTextOverlaySvg(title, description),
+    getBackgroundPng(includeIdent),
+    renderTextOverlaySvg(title, description, largeText, textYValue, textHeightValue),
   ]);
   const png = await sharp(backgroundPng)
     .composite([

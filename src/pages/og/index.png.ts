@@ -12,5 +12,7 @@ export const GET: APIRoute = async () => {
     description: siteCard.description,
     eyebrow: "Home",
     pathLabel: siteCard.pathLabel,
+    includeIdent: false,
+    largeText: true,
   });
 };
