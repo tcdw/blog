@@ -1,17 +1,21 @@
 ---
-import {SITE_LANGUAGE} from "../consts";
+import { SITE_LANGUAGE } from "../consts";
 import "@/assets/fonts/ChillRoundF/ChillRoundF.css";
+
+const customHeadHTML = import.meta.env.CUSTOM_HEAD_HTML;
+const customBodyHTML = import.meta.env.CUSTOM_BODY_HTML;
 ---
 
 <!doctype html>
 <html lang={SITE_LANGUAGE}>
-<head>
-    <slot name="head"></slot>
-</head>
-<body class="dark:bg-gray-950">
-<slot />
-</body>
+  <head>
+    <slot name="head" />
+    {customHeadHTML && <Fragment set:html={customHeadHTML} />}
+  </head>
+  <body class="dark:bg-gray-950">
+    <slot />
+    {customBodyHTML && <Fragment set:html={customBodyHTML} />}
+  </body>
 </html>
 
-<style is:global>
-</style>
+<style is:global></style>
