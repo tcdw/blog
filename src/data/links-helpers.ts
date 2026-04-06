@@ -22,14 +22,6 @@ interface CachedFriendCategories {
   categories: FriendCategory[];
 }
 
-interface RawFriendItem {
-  name?: unknown;
-  url?: unknown;
-  avatar?: unknown;
-  description?: unknown;
-  hidden?: unknown;
-}
-
 interface RawFriendsToml {
   blogs?: unknown;
   nonBlogs?: unknown;
@@ -45,17 +37,22 @@ function isFreshCache(updatedAtMs: number) {
   return Date.now() - updatedAtMs < FRIENDS_CACHE_TTL_MS;
 }
 
-function toFriendItem(value: RawFriendItem): FriendItem | null {
-  if (typeof value.name !== "string" || typeof value.url !== "string" || typeof value.avatar !== "string") {
-    return null;
+function toFriendItem(value: FriendItem): FriendItem {
+  let avatar = value.avatar;
+  switch (true) {
+    case avatar.includes("gravatar"): {
+      avatar += "?s=128&r=g";
+      break;
+    }
+    case avatar.includes("avatars.githubusercontent.com"): {
+      avatar += "?s=128&v=4";
+      break;
+    }
   }
 
   return {
-    name: value.name,
-    url: value.url,
-    avatar: value.avatar,
-    description: typeof value.description === "string" ? value.description : undefined,
-    hidden: typeof value.hidden === "boolean" ? value.hidden : undefined,
+    ...value,
+    avatar,
   };
 }
 
@@ -65,7 +62,7 @@ function toFriendItems(value: unknown) {
   }
 
   return value
-    .map(item => toFriendItem((item ?? {}) as RawFriendItem))
+    .map(item => toFriendItem((item ?? {}) as FriendItem))
     .filter((item): item is FriendItem => item !== null);
 }
 
