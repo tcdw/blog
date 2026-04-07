@@ -18,13 +18,12 @@ export interface FriendCategory {
 }
 
 interface CachedFriendCategories {
-  fetchedAt: string;
   categories: FriendCategory[];
 }
 
 interface RawFriendsToml {
-  blogs?: unknown;
-  nonBlogs?: unknown;
+  blogs?: FriendItem[];
+  nonBlogs?: FriendItem[];
 }
 
 const cacheFilePath = resolve(FRIENDS_CACHE_FILE);
@@ -56,25 +55,15 @@ function toFriendItem(value: FriendItem): FriendItem {
   };
 }
 
-function toFriendItems(value: unknown) {
-  if (!Array.isArray(value)) {
-    return [];
-  }
-
-  return value
-    .map(item => toFriendItem((item ?? {}) as FriendItem))
-    .filter((item): item is FriendItem => item !== null);
-}
-
 function normalizeFriendCategories(data: RawFriendsToml): FriendCategory[] {
   return [
     {
       title: "博客",
-      items: toFriendItems(data.blogs),
+      items: (data.blogs ?? []).map(toFriendItem),
     },
     {
       title: "非博客",
-      items: toFriendItems(data.nonBlogs),
+      items: (data.nonBlogs ?? []).map(toFriendItem),
     },
   ].filter(({ items }) => items.length > 0);
 }
@@ -95,7 +84,6 @@ async function readCachedFriendCategories() {
 
 async function writeCachedFriendCategories(categories: FriendCategory[]) {
   const payload: CachedFriendCategories = {
-    fetchedAt: new Date().toISOString(),
     categories,
   };
 
