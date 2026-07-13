@@ -11,7 +11,7 @@ import * as markdownData from "./_links.md";
 const friendCategories = await getFriendCategories();
 ---
 
-<BlogPage title="链接" description={STATIC_PAGE_OG.links.description} image={getPageOgImagePath("links")}>
+<BlogPage title="链接" description={STATIC_PAGE_OG.links.description} slug="links" image={getPageOgImagePath("links")}>
   {
     friendCategories.map(({ title, items }) => {
       const visibleItems = items.filter(({ hidden }) => !hidden);
