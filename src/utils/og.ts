@@ -7,22 +7,28 @@ export const NOT_FOUND_OG_IMAGE = "/og/404.png";
 export const STATIC_PAGE_OG = {
   about: {
     title: "关于",
-    description: "关于 tcdw、本博客，以及这个小站的简单介绍。",
+    description: "小站的简单介绍",
     image: "/og/page/about.png",
     pathLabel: "/page/about/",
   },
   archive: {
     title: "归档",
-    description: "按年份整理的文章归档。",
+    description: "按年份整理的文章归档",
     image: "/og/page/archive.png",
     pathLabel: "/page/archive/",
   },
   links: {
     title: "链接",
-    description: "朋友们的博客，还有一些喜欢的网站。",
+    description: "朋友们的博客",
     image: "/og/page/links.png",
     pathLabel: "/page/links/",
   },
+  guestbook: {
+    title: "留言",
+    description: "它真的只是个留言本（",
+    image: "/og/page/guestbook.png",
+    pathLabel: "/page/guestbook/",
+  }
 } as const;
 
 export function getPostOgImagePath(slug: string) {
