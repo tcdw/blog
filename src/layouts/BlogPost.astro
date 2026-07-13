@@ -8,6 +8,7 @@ import BaseLayout from "./BaseLayout.astro";
 import Container from "../components/Container.astro";
 import MarkdownBody from "../components/MarkdownBody.astro";
 import { getPostOgImagePath } from "@/utils/og";
+import { Comment } from "../components/comment/comment.component";
 
 type Props = CollectionEntry<'blog'>['data'] & {
 	slug: string;
@@ -15,6 +16,8 @@ type Props = CollectionEntry<'blog'>['data'] & {
 
 const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
 const ogImage = heroImage || getPostOgImagePath(slug);
+const commentApiBaseUrl = import.meta.env.PUBLIC_POMMENT_API_BASE_URL || "https://pomment.tcdw.net/api";
+const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 ---
 
 <BaseLayout>
@@ -33,7 +36,16 @@ const ogImage = heroImage || getPostOgImagePath(slug);
 				</MarkdownBody>
 			</article>
 		</div>
-		<slot name="comment" />
+		<slot name="comment">
+			<Comment
+				slug={slug}
+				url={Astro.url.href}
+				title={title}
+				apiBaseUrl={commentApiBaseUrl}
+				recaptchaSiteKey={recaptchaSiteKey}
+				client:visible
+			/>
+		</slot>
 	</Container>
 	<Footer />
 </BaseLayout>
