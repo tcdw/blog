@@ -16,7 +16,7 @@ type Props = CollectionEntry<'blog'>['data'] & {
 
 const { title, description, pubDate, updatedDate, heroImage, slug } = Astro.props;
 const ogImage = heroImage || getPostOgImagePath(slug);
-const commentApiBaseUrl = import.meta.env.PUBLIC_POMMENT_API_BASE_URL || "https://pomment.tcdw.net/api";
+const commentApiBaseUrl = import.meta.env.PUBLIC_POMMENT_API_BASE_URL;
 const recaptchaSiteKey = import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY;
 ---
 
