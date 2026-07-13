@@ -34,6 +34,10 @@ body {
   text-autospace: normal;
 }
 
+.grecaptcha-badge {
+  display: none;
+}
+
 @media (width >= 48rem) {
   .koi-squircle-md {
     border-radius: 1.5rem;
