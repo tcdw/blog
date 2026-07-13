@@ -1,0 +1,13 @@
+---
+import BlogPage from "../../layouts/BlogPage.astro";
+import MarkdownBody from "../../components/MarkdownBody.astro";
+import { getPageOgImagePath, STATIC_PAGE_OG } from "@/utils/og";
+
+import * as markdownData from "./_guestbook.md";
+---
+
+<BlogPage title="留言" slug="guestbook" image={getPageOgImagePath("links")}>
+  <MarkdownBody class="mt-6">
+    <markdownData.Content />
+  </MarkdownBody>
+</BlogPage>

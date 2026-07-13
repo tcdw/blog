@@ -27,6 +27,7 @@ export const SITE_MENU: { title: string; href: string; target: string }[] = [
   { title: "首页", href: "./", target: "" },
   { title: "博客", href: "./blog/", target: "" },
   { title: "关于", href: "./page/about/", target: "" },
+  { title: "留言", href: "./page/guestbook/", target: "" },
   { title: "归档", href: "./page/archive/", target: "" },
   { title: "链接", href: "./page/links/", target: "" },
 ];
