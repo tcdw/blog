@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import { unified } from '@astrojs/markdown-remark';
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solid from "@astrojs/solid-js";
@@ -20,13 +21,19 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), solid({ exclude: [/src\/utils\/og-render\.tsx$/] }), icon()],
 
   markdown: {
-    remarkRehype: {
-      footnoteLabel: "脚注",
-      footnoteBackLabel: "文档内容的脚注",
-    },
+    processor: unified({
+      remarkRehype: {
+        footnoteLabel: "脚注",
+        footnoteBackLabel: "文档内容的脚注",
+      },
+    }),
   },
 
   vite: {
     plugins: [tailwindcss()],
+    esbuild: {
+      jsx: "automatic",
+      jsxImportSource: "satori/jsx",
+    },
   },
 });
