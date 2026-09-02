@@ -36,15 +36,15 @@
 
 ## 技术栈
 
-- Astro 5（静态站点）
+- Astro 7（静态站点）
 - SolidJS（Astro Islands）
 - Tailwind CSS v4
 - TypeScript
-- 使用 Bun
+- 使用 Bun 运行脚本；依赖管理只用 pnpm（唯一 lockfile 是 pnpm-lock.yaml）
 
 ## 常用命令
 
-- `bun install`
+- `pnpm install`
 - `bun dev`
 - `bun build`
 - `bun preview`
@@ -66,7 +66,7 @@ Default to using Bun instead of Node.js.
 
 - Use `bun <file>` instead of `node <file>` or `ts-node <file>`
 - Use `bun test` instead of `jest` or `vitest`
-- Use `bun install` instead of `npm install` or `yarn install` or `pnpm install`
+- Use `pnpm install` for dependencies — never `bun install`, `npm install`, or `yarn install` (pnpm is the only package manager; never create `bun.lock`)
 - Use `bun run <script>` instead of `npm run <script>` or `yarn run <script>` or `pnpm run <script>`
 - Use `bunx <package> <command>` instead of `npx <package> <command>`
 - Bun automatically loads .env, so don't use dotenv.
