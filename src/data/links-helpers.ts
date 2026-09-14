@@ -24,6 +24,7 @@ interface CachedFriendCategories {
 interface RawFriendsToml {
   blogs?: FriendItem[];
   nonBlogs?: FriendItem[];
+  community?: FriendItem[];
 }
 
 const cacheFilePath = resolve(FRIENDS_CACHE_FILE);
@@ -64,6 +65,10 @@ function normalizeFriendCategories(data: RawFriendsToml): FriendCategory[] {
     {
       title: "非博客",
       items: (data.nonBlogs ?? []).map(toFriendItem),
+    },
+    {
+      title: "社群",
+      items: (data.community ?? []).map(toFriendItem),
     },
   ].filter(({ items }) => items.length > 0);
 }
