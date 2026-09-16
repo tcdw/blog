@@ -11,6 +11,6 @@ export function filterPosts(posts: Post[], options: FilterPostsOption = {}) {
   return posts
     .map(e => e)
     .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-    .filter(e => (options.filterDraft ? !e.data.draft : true))
+    .filter(e => import.meta.env.PROD ? (options.filterDraft ? !e.data.draft : true) : true)
     .filter(e => (options.filterUnlisted ? !e.data.unlisted : true));
 }
