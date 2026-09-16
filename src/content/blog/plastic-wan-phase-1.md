@@ -67,7 +67,7 @@ add_memory(content, ttl?)
 delete_memory(id)
 ```
 
-每条记忆就是一句话，Prompt 要求模型尽量控制在 100 字以内，工具这边则设了 150 字的硬上限。默认 TTL 一天，模型也可以自己估一下这件事大概能「活」多久，设长点或短点。所有当前有效的记忆拼成一个列表，直接塞进 System Prompt，不做任何检索，反正通常也没几条。
+每条记忆就是一句话，Prompt 要求模型尽量控制在 100 字以内，Harness 这边则设了 150 字的硬上限。默认 TTL 一天，模型也可以自己估一下这件事大概能「活」多久，设长点或短点。所有当前有效的记忆拼成一个列表，直接塞进 System Prompt，不做任何检索，反正通常也没几条。
 
 遗忘有两种路子。一种是自然遗忘：TTL 到期，自动消失。另一种是主动遗忘：塑料碗自己发现某条记忆过时了或者写错了，调用 `delete_memory` 删掉。模型不光能写记忆，也能忘。至于修改……先删掉旧的，再加一条新的就够了。所以这些记忆并不是一份只增不减的聊天摘要，更像是塑料碗自己维护的一小块临时状态：随手往头上贴的便利贴，想起什么就写一张贴上去，过期了就撕下来。
 
@@ -77,7 +77,13 @@ delete_memory(id)
 
 至于更复杂的记忆、检索和总结机制……等塑料碗真的需要记住三个月前发生的事情，再说吧。
 
-![头上的便利贴](https://file.tcdw.net/blog/post/2026/plasticwan-notes.webp)
+<figure>
+  <img
+    src="https://file.tcdw.net/blog/post/2026/plasticwan-notes.webp"
+    alt="头上的便利贴"
+  />
+	<figcaption>塑料碗头上的便利贴。图片使用 AI 生成，使用模型：<code>gemini-3.1-flash-image-preview</code></figcaption>
+</figure>
 
 ## 然后，饺子包完了吗？
 
@@ -95,5 +101,6 @@ delete_memory(id)
 
 ## 鸣谢
 
-- 「塑料碗」这个名字是 [Zhixiang](https://x.com/Zhixiang_tih) 想出来的。 
-- 「塑料碗」的人设是某一天 [🌸輝夜 はな](https://x.com/KGY_HN) 玩塑料碗 Bot 时，根据塑料碗自己的幻觉为它完善的。另外，塑料碗 Telegram Bot 的现用头像也是 ta 画的。
+- 「塑料碗」这个名字是 Zhixiang [@Zhixiang_tih](https://x.com/Zhixiang_tih) 想出来的。 
+- 「塑料碗」的人设是某一天「輝夜 はな」[@KGY_HN](https://x.com/KGY_HN) 玩塑料碗 Bot 时，根据塑料碗自己的幻觉为它完善的设定。塑料碗 Telegram Bot 的现用头像也由 ta 绘制。
+- 「雨夹雪」[@mizorewww](https://x.com/mizorewww) 的个人群使塑料碗得到了充分的压力测试，暴露了塑料碗的很多技术缺陷，并促使我进行改进。
