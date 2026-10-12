@@ -16,7 +16,7 @@
 
 - `pnpm install`
 - `bun dev`
-- `bun build`
+- `bun run build`
 - `bun preview`
 
 ## SolidJS 部分的 File Naming
